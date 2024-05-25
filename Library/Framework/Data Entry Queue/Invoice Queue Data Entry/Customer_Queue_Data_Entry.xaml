@@ -1,0 +1,1179 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Freight_Data_Entry_Queue" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="ReadExcel" Type="InArgument(sd:DataTable)" />
+  </x:Members>
+  <this:Freight_Data_Entry_Queue.ReadExcel>
+    <InArgument x:TypeArguments="sd:DataTable" />
+  </this:Freight_Data_Entry_Queue.ReadExcel>
+  <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
+  <sap:VirtualizedContainerService.HintSize>751.2,5196</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Text</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.UIAutomationNext.Triggers</x:String>
+      <x:String>UiPath.Platform.Triggers</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.Platform.Triggers.Scope</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Triggers</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
+      <x:String>UiPath.Vision.OCR</x:String>
+      <x:String>UiPath.OCR.Contracts</x:String>
+      <x:String>UiPath.OCR.Contracts.Activities</x:String>
+      <x:String>UiPath.Core.Activities.OCR.Engines</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>System.Globalization</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.CSharp</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.IntelligentOCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OmniPage.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.PDF.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Core</AssemblyReference>
+      <AssemblyReference>UiPath.Vision.OmniPage.Core</AssemblyReference>
+      <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+      <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldCollapseAll">False</x:Boolean>
+      <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Sequence DisplayName="Freight_Data_Entry_Queue" sap:VirtualizedContainerService.HintSize="761.6,5131.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Default="C:\Users\Admin\OneDrive\Documents\UiPath\Zero_Down\Documents\New Microsoft Excel Worksheet.xlsx" Name="ExcelPath" />
+      <Variable x:TypeArguments="x:String" Name="PoNumber" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Freight Invoice Screen" sap:VirtualizedContainerService.HintSize="699.2,5019.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="55fe380f-4dcf-4e05-997d-6ee3c0ae967d" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="665.6,4802.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="603.2,4687.2" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+              <ui:ForEachRow.Body>
+                <ActivityAction x:TypeArguments="sd:DataRow">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="569.6,4499.2" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <If sap:VirtualizedContainerService.HintSize="526.4,4409.6" sap2010:WorkflowViewState.IdRef="If_3">
+                      <If.Condition>
+                        <InArgument x:TypeArguments="x:Boolean">
+                          <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_21">
+                            <CSharpValue.Result>
+                              <OutArgument x:TypeArguments="x:Boolean" />
+                            </CSharpValue.Result>!String.IsNullOrEmpty(CurrentRow["Freight Bill No"].ToString().Trim())</CSharpValue>
+                        </InArgument>
+                      </If.Condition>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <If.Then>
+                        <Sequence sap:VirtualizedContainerService.HintSize="492.8,4226.4" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                          <Sequence.Variables>
+                            <Variable x:TypeArguments="x:String" Name="InvoiceDate" />
+                          </Sequence.Variables>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <Sequence sap:VirtualizedContainerService.HintSize="449.6,4136.8" sap2010:WorkflowViewState.IdRef="Sequence_56">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <uix:NMouseScroll KeyModifiers="{x:Null}" Direction="Down" DisplayName="Mouse Scroll 'Bill To Address'" sap:VirtualizedContainerService.HintSize="387.2,157.6" sap2010:WorkflowViewState.IdRef="NMouseScroll_1" InteractionMode="HardwareEvents" MovementUnits="1" ScopeIdentifier="55fe380f-4dcf-4e05-997d-6ee3c0ae967d" Version="V3">
+                              <uix:NMouseScroll.Target>
+                                <uix:TargetAnchorable BrowserURL="https://audit.freightoptics.com/ui3/ltlinvoiceScreen" DesignTimeRectangle="773, 377, 494, 30" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Bill To Address'" FullSelectorArgument="&lt;webctrl aaname='Bill To Address' tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='TH' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Bill To Address' tag='TABLE' /&gt;&lt;webctrl type='' tag='TH' class='' aaname='Bill To Address' check:innerText='Bill To Address' /&gt;" Guid="5bf6c897-5674-4925-bc50-6a5c144daadf" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAfIAAAAiCAYAAACk2FtLAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJ7SURBVHhe7dlNbqpQGIBh10jSDRm3okuxq+iog447dMSVn4PfQRBpSduT+zzJlyiHIjRpXqG7z8/POs5ut8sGAPi7hBwACrYY8re3N2OMMcb8sUnckQNAYYQcAAom5ABQMCEHgIIJOQAUTMgBoGBCDgAFE3IAKJiQA0DBhBw2dN7Hv5mqPr532z9OVbvt8Hp983oYXnfbb/t1PurjSzzOdV6O161f9H6sq+YY+3O/YV53/od6bs+ldeDnCTlsKIaufd0HeF3Ie2G/70if/UyAhRzKI+SwoRi62Uj/aMjzu/vq9Pi+XsihPEIOG7qFrg9oeiQeo/zNkHefkWYhqv0xqtM5P5+kX++mqqs2+uGYD9Zvd/rXSY/ts/3D9sZorbuuc30I2555/A/khBw2lEc23AH3EftuyMd3xEt3yNl6e7zwWeP/naf3af+F9RTy4fzuzrePdPvz8fXN0vkDy4QcNnQfzj7mMXLh9aqQ9yHNHo9PbRuM45m/n/rseP5r17u1qWn2zx/xp2tKXwbaGUUeeI6Qw4byO8wQzl8IeRbJbL4W6sb9errW8bVPi7Efrqu/znbEHFYTcthQFrMY2S1CfjWO5Xw8R/+jT+Ix+/Mb4pnej85/bn0c8iHIQ4ybLzIT5zZxXd2+8WeBZwk5bCjecbaTwhTjFV6vDXkj/4ypiF/FLxGZUeCHOM8c88H6XcgbKeZp9of62JzD+Djt7yV/3D57LcBDQg4ABRNyACiYkANAwYQcAAom5ABQMCEHgIIJOQAUTMgBoGBCDgAFE3IAKNiqkDc7G2OMMeZvTSLkxhhjTIGTLIb8crkYY35pmj/Wqe3GmP97biGv63+fqpOH36PjkgAAAABJRU5ErkJggg==" InformativeScreenshot="c5b29ba19eb6b0a4cc61fddb66f3a0ab.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Freight Invoice Screen' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                              </uix:NMouseScroll.Target>
+                            </uix:NMouseScroll>
+                            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DelayBefore="1" DelayBetweenKeys="0.8" DisplayName="Type Into 'Name*'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="387.2,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_9" ScopeIdentifier="55fe380f-4dcf-4e05-997d-6ee3c0ae967d" Version="V3">
+                              <uix:NTypeInto.Target>
+                                <uix:TargetAnchorable BrowserURL="https://audit.freightoptics.com/ui3/ltlinvoiceScreen" DesignTimeRectangle="779, 330, 219, 34" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl aaname='Bill To Address' tag='TABLE' /&gt;&lt;webctrl tableRow='2' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Bill To Address' tag='TABLE' /&gt;&lt;webctrl type='' tag='INPUT' class='ng-pristine ng-invalid ng-invalid-required ng-touched' aaname='' /&gt;" Guid="69ee287b-2ba5-4707-92e8-51cd9149ff50" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAN8AAAAmCAYAAABEZE79AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACfSURBVHhe7dOhEcMwAARB99+jChGSY+CQONA6sjvz5PkdH+vanNPMNk58ZtG+8Y0xzGzDHuMD3iU+iIgPIuKDiPggIj6IiA8i4oOI+CAiPoiIDyLig4j4ICI+iIgPIuKDiPggIj6IiA8i4oOI+CAiPoiIDyLig4j4ICI+iIgPIuKDiPggIj6IiA8i4oPI3/jM7P39xHcfZrZn4jNLNtcJiRX9GAu1REAAAAAASUVORK5CYII=" InformativeScreenshot="06b343c5e7de3b907e63eb7284b93c12.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Freight Invoice Screen' /&gt;" SearchSteps="FuzzySelector, Image" Version="V2" Visibility="Interactive">
+                                  <uix:TargetAnchorable.Anchors>
+                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                      <uix:Target DesignTimeRectangle="779, 313, 44, 12" ElementType="Text" FriendlyName="'Name*'" FullSelectorArgument="&lt;webctrl aaname='Bill To Address' tag='TABLE' /&gt;&lt;webctrl tableRow='2' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Bill To Address' tag='TABLE' /&gt;&lt;webctrl type='' tag='LABEL' class='control-label' aaname='Name*:' check:innerText='Name*:' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADAAAAAQCAYAAABQrvyxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEfSURBVEhL7ZNtDsMgCIY9okkP1HgUexN3kP7wFv5iKFLxo2u3ZGuarMmbqAXhAVT4QVQI4Zb6A1ytArBa0HE9O2HgwHRnP9TDgJos+NG/rB4AZR5scBWABzsp0LNBWVovfmC3A6CUAZcMrgPwawC/aMxFg8X12G4AoKfoxMQtAFWGfVhcHTeP/rnKp3QXFUdE2LZxqAMm5ZBiZHt5B+7JeQNAQ0pEI3kNUM7JmRNuAShAga33ubtdMoNut2/gLMB2GXYjjVW6dBCg8mEAHr9+TyNBe4btVezPCH3IsU2mau/XAN5LdqR9ADnvOWkKqg9G6BzAVqCtILFAB0DnRygb5DNZdU5a6iOAKNnlKHywVsZv9RJAGt5If4CrdXOAAE/H4PLtmfCkmgAAAABJRU5ErkJggg==" SearchSteps="Selector" />
+                                    </scg:List>
+                                  </uix:TargetAnchorable.Anchors>
+                                </uix:TargetAnchorable>
+                              </uix:NTypeInto.Target>
+                              <uix:NTypeInto.Text>
+                                <InArgument x:TypeArguments="x:String">
+                                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_106">CurrentRow["Bill To Name"].ToString().Trim() + "[k(Tab)]"+ CurrentRow["Bill To Address"].ToString().Trim()+"[k(Tab)]"+ CurrentRow["Bill To City"].ToString().Trim().Replace(",","")+"[k(Tab)]"+ CurrentRow["Bill To Postal Code"].ToString().Trim()+"[k(Tab)]"</CSharpValue>
+                                </InArgument>
+                              </uix:NTypeInto.Text>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </uix:NTypeInto>
+                            <uix:NSelectItem DisplayName="Select Item 'Select Country*'" sap:VirtualizedContainerService.HintSize="387.2,157.6" sap2010:WorkflowViewState.IdRef="NSelectItem_26" Item="US&#xA;                                        United States" ScopeIdentifier="55fe380f-4dcf-4e05-997d-6ee3c0ae967d" Version="V3">
+                              <uix:NSelectItem.Items>
+                                <scg:List x:TypeArguments="x:String" Capacity="50">
+                                  <x:String xml:space="preserve">SJ
+                                        Svalbard</x:String>
+                                  <x:String xml:space="preserve">SZ
+                                        Swaziland</x:String>
+                                  <x:String xml:space="preserve">SE
+                                        Sweden</x:String>
+                                  <x:String xml:space="preserve">CH
+                                        Switzerland</x:String>
+                                  <x:String xml:space="preserve">SY
+                                        Syria</x:String>
+                                  <x:String xml:space="preserve">TW
+                                        Taiwan</x:String>
+                                  <x:String xml:space="preserve">TJ
+                                        Tajikistan</x:String>
+                                  <x:String xml:space="preserve">TZ
+                                        Tanzania</x:String>
+                                  <x:String xml:space="preserve">TH
+                                        Thailand</x:String>
+                                  <x:String xml:space="preserve">GM
+                                        The Gambia</x:String>
+                                  <x:String xml:space="preserve">TL
+                                        Timor-Leste</x:String>
+                                  <x:String xml:space="preserve">TG
+                                        Togo</x:String>
+                                  <x:String xml:space="preserve">TK
+                                        Tokelau</x:String>
+                                  <x:String xml:space="preserve">TO
+                                        Tonga</x:String>
+                                  <x:String xml:space="preserve">TT
+                                        Trinidad and Tobago</x:String>
+                                  <x:String xml:space="preserve">TN
+                                        Tunisia</x:String>
+                                  <x:String xml:space="preserve">TR
+                                        Turkey</x:String>
+                                  <x:String xml:space="preserve">TM
+                                        Turkmenistan</x:String>
+                                  <x:String xml:space="preserve">TC
+                                        Turks and Caicos Islands</x:String>
+                                  <x:String xml:space="preserve">TV
+                                        Tuvalu</x:String>
+                                  <x:String xml:space="preserve">UG
+                                        Uganda</x:String>
+                                  <x:String xml:space="preserve">UA
+                                        Ukraine</x:String>
+                                  <x:String xml:space="preserve">AE
+                                        United Arab Emirates</x:String>
+                                  <x:String xml:space="preserve">GB
+                                        United Kingdom</x:String>
+                                  <x:String xml:space="preserve">US
+                                        United States</x:String>
+                                  <x:String xml:space="preserve">UY
+                                        Uruguay</x:String>
+                                  <x:String xml:space="preserve">VI
+                                        US Virgin Islands</x:String>
+                                  <x:String xml:space="preserve">UZ
+                                        Uzbekistan</x:String>
+                                  <x:String xml:space="preserve">VU
+                                        Vanuatu</x:String>
+                                  <x:String xml:space="preserve">VA
+                                        Vatican City</x:String>
+                                  <x:String xml:space="preserve">VE
+                                        Venezuela</x:String>
+                                  <x:String xml:space="preserve">VN
+                                        Vietnam</x:String>
+                                  <x:String xml:space="preserve">WF
+                                        Wallis and Futuna</x:String>
+                                  <x:String xml:space="preserve">EH
+                                        Western Sahara</x:String>
+                                  <x:String xml:space="preserve">YE
+                                        Yemen</x:String>
+                                  <x:String xml:space="preserve">ZM
+                                        Zambia</x:String>
+                                  <x:String xml:space="preserve">ZW
+                                        Zimbabwe</x:String>
+                                  <x:String xml:space="preserve">TP
+                                        EAST TIMOR</x:String>
+                                  <x:String xml:space="preserve">BQ
+                                        BONAIRE</x:String>
+                                  <x:String xml:space="preserve">GP
+                                        GUADELOUPE</x:String>
+                                  <x:String xml:space="preserve">MQ
+                                        MARTINIQUE</x:String>
+                                  <x:String xml:space="preserve">BQ
+                                        ST. EUSTATIUS</x:String>
+                                  <x:String xml:space="preserve">GF
+                                        FRENCH GUIANA</x:String>
+                                  <x:String xml:space="preserve">CG
+                                        Congo</x:String>
+                                  <x:String xml:space="preserve">YT
+                                        MAYOTTE</x:String>
+                                  <x:String xml:space="preserve">RE
+                                        REUNION, ISLAND OF</x:String>
+                                  <x:String xml:space="preserve">UK
+                                        Channel Islands (UK)</x:String>
+                                  <x:String xml:space="preserve">BQ
+                                        SABA</x:String>
+                                  <x:String xml:space="preserve">FM
+                                        MICRONESIA</x:String>
+                                  <x:String xml:space="preserve">Cc
+                                        IVORY COAST</x:String>
+                                </scg:List>
+                              </uix:NSelectItem.Items>
+                              <uix:NSelectItem.Target>
+                                <uix:TargetAnchorable BrowserURL="https://audit.freightoptics.com/ui3/ltlinvoiceScreen" DesignTimeRectangle="800, 424, 219, 26" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Select Country*'" FullSelectorArgument="&lt;webctrl aaname='Bill To Address' tag='TABLE' /&gt;&lt;webctrl tableRow='4' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Bill To Address' tag='TABLE' /&gt;&lt;webctrl type='' tag='A' class='select2-choice ui-select-match select2-default' aaname='Select Country*                                                                                 ' check:innerText='Select Country*' /&gt;" Guid="2e7f125d-4a3a-469b-bcf1-023e91c15adf" ImageBase64="" InformativeScreenshot="e1eecd1a8724992687ff3639bc89abf7.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Freight Invoice Screen' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive">
+                                  <uix:TargetAnchorable.Anchors>
+                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                      <uix:Target DesignTimeRectangle="796, 463, 109, 29" FriendlyName="'chrome.exe Freight'" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAG0AAAAdCAYAAACg2uKXAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMQSURBVGhD7VnBihNBEF38BL9DELx49+gn7EHBi4jHHD3sDwheFfYLPHiURQh7WfAiOWlA2AQPEtRgwiIhyCJlve6u6Zq2M8lIT3YH6sFjp2u6q6vf6+7A7AEZeoetpn0af6EHT17Q7buP6dadR8ZChJ7QFfq2RaNpSIjkNx++pBvP3tHB0amxEKEndIW+bY1rNA07AYlzkxrLEPpC5zZoNA27wE5Yt4S+0LkNGk3D3ZubyFiW0LkNzLRrwP2ZdnZBy99/aP3zBx3m3ht35v5MG618p/WCBhvix1OmftfIGY39yAidm/Mup+dV/vHolI7neFrxHOc0XLtwHfNZMkedbny2T8hXW1suVoZXbBoWBhH5+WRBSyeovKtzMF3R8CSJY4zKB1GdUbpPiMM0b3Qwbe7HDaaX8V2jaTMewxthU41JLRtjBditaW9hRAO+zzYIHU8C3kFYj8u6cYko6OdyuQ0Q8/5rWswRTYttj2Su0YLbqCuN+824hKFSSxpzbZ5nzrldn3hL+Ln9epd807iN4+rneXij6tqEV2ta2Nnu2mGIyFFIOYkZscBgjkCbXxnIzzubpjcBhFYbAlc3nnVenc+ZXRmSxsQUqUfWwn3xnucdcg2D8PPg//KYaf7kd2va0Xu693pMh2+YH8PRWV/Qc7SZ91/pvlFcMdEDC2wwTQnrRAobQYu7s2kwqroidV88K8icmF/6Sy25WG3TeQMjMIfEQh+MQ1OtTbNj0xTDlVEvBMVGEUXompBVv+2m6dPxX6Y5sZRwkttdjaGPrsX1D/lk7lwsqT+etJTcL/zWujbnGlenOnJ/pn0Ipq0W9LSKc5G4t/0bZSgWGWJBAH/69GKT3e+gxQztr2FezvNZTrA6jQIxLsZ8rqqtT4+PuDHVezYF8Vzs2y9py/pU7ZXRATxPri7N/ZlmLMaiptm3x+5Z/NujfeXvnsW/8tv/07oj9ISu0Lfo/9MAJMROQHLcvcYyhJ7Qta1hwFbTDNcPZloPYab1EGZaD2Gm9RBmWg9hpvUQZloPcTCZTMjYJ07oLyltyIoIaskTAAAAAElFTkSuQmCC" SearchSteps="Image" TargetType="ImageBased" />
+                                    </scg:List>
+                                  </uix:TargetAnchorable.Anchors>
+                                </uix:TargetAnchorable>
+                              </uix:NSelectItem.Target>
+                            </uix:NSelectItem>
+                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Select State*'" sap:VirtualizedContainerService.HintSize="387.2,157.6" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="55fe380f-4dcf-4e05-997d-6ee3c0ae967d" Version="V3">
+                              <uix:NClick.Target>
+                                <uix:TargetAnchorable BrowserURL="https://audit.freightoptics.com/ui3/ltlinvoiceScreen" DesignTimeRectangle="1016, 640, 195, 23" DesignTimeScaleFactor="0.8999999761581421" ElementType="Text" FriendlyName="'Select State*'" FullSelectorArgument="&lt;webctrl aaname='Bill To Address' tag='TABLE' /&gt;&lt;webctrl aaname='Select State*' tableRow='4' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Bill To Address' tag='TABLE' /&gt;&lt;webctrl aaname='Select State*' type='' tag='SPAN' class='select2-chosen ng-binding' check:innerText='Select State*' /&gt;" Guid="861cd1e5-5be9-4109-a606-5f46a51e8fd7" InformativeScreenshot="c5be046474c96bc60b5a0319fc6eb5a6.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Freight Invoice Screen' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                              </uix:NClick.Target>
+                            </uix:NClick>
+                            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'chrome.exe Freight'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="387.2,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_12" ScopeIdentifier="55fe380f-4dcf-4e05-997d-6ee3c0ae967d" Version="V3">
+                              <uix:NTypeInto.Target>
+                                <uix:TargetAnchorable BrowserURL="https://audit.freightoptics.com/ui3/ltlinvoiceScreen" DesignTimeRectangle="1397, 603, 315, 47" DesignTimeScaleFactor="1.25" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl aaname='Bill To Address' tag='TABLE' /&gt;&lt;webctrl tableCol='2' tableRow='4' tag='INPUT' type='search' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Bill To Address' tag='TABLE' /&gt;&lt;webctrl class='ui-select-search select2-input ng-pristine ng-valid ng-touched' aaname='' tag='INPUT' type='search' /&gt;" Guid="621ee8ba-9adf-4f79-8cfa-5d2576715a3c" InformativeScreenshot="d3cea71429e2b3e4be15f9a6d9f3c919.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Freight Invoice Screen' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                                  <uix:TargetAnchorable.Anchors>
+                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                      <uix:Target DesignTimeRectangle="1336, 350, 150, 39" FriendlyName="'chrome.exe Freight'" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAJYAAAAnCAYAAADtl7EyAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAJ0SURBVHhe7ZxJjsIwEEVzxkh9IZSrwFHgFFmx4BjuOE5VPFSCW/J3I/SfVAuIx6pnhxWDIwQAxSIQhnmeHYPROnhjEQgUi0CgWAQCxSIQKBaBQLEIBIpFIFAsAoFiEQgUi0CgWAQCxSIQmov1uo1uGIYkpsf20POYwvc/V/eKP1/uy4eXu/74PqO7Pv3DGHmWx+R8zyY8r270Y8raKrlfwlqSfRrUtvsGuoiVJPODxYrX/pfiU6wSmFjjLZx5LdYqjkG1WMLdTb59y5tqRcbd4mi9BhSrpJtY8rl43TQWS4onUV1EXcd0Lq6sfwu/L1OYN+0kL9NtaxeLLGuRKF7N6SHQ3C7oQV6j9eGrp8+rME4MTKzsxomj4vYJRQ/zFodByAuehYpV0S7Pk/Q187eG7Nf+SbD2t+YtpOxDt99YWlyQWHpTWRKfjreQr0nmSIoSFfTgdgly1LXTPNWs9yxHvo/Mk7TzOXmzbyDwV+EuwpZ4iFjH/cr1lEgbuTU85evNFtqTtq1rp2IdyGeG5EwFjL7b0AO2RLyf3nQQK/vu48TaxTdDC48RK1nXO7GyMVXOYt/RnmJxO9JBLCn6lniIWHvRkhOsJ/tkvOpi7vs4umWCWHXtTLF0vaWUCctY0i8dx88tfY8F70G/31j5Nd5YrOSU5nFyaoOQ9nxF8bXwdgSx6tqZYi0c5m+J5GBm4ceJX4N7fLNY1i3SXCxPdFtsocW2yNeSYz5PBY4Lms513u5IrJXodguR5SOTKx4jlet/pPI0F4sQD8UiECgWgUCxCASKRSBQLAKBYhEIFItAoFgEAsUiECgWgUCxCAT+BykDELP7Bco3o80JV9xwAAAAAElFTkSuQmCC" SearchSteps="Image" TargetType="ImageBased" />
+                                    </scg:List>
+                                  </uix:TargetAnchorable.Anchors>
+                                </uix:TargetAnchorable>
+                              </uix:NTypeInto.Target>
+                              <uix:NTypeInto.Text>
+                                <InArgument x:TypeArguments="x:String">
+                                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_117">CurrentRow["Bill To State"].ToString().Trim()</CSharpValue>
+                                </InArgument>
+                              </uix:NTypeInto.Text>
+                            </uix:NTypeInto>
+                            <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="387.2,178.4" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" Shortcuts="[d(hk)][k(enter)][u(hk)]" Version="V3" />
+                            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="387.2,52.8" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                              <ui:CommentOut.Body>
+                                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,268" sap2010:WorkflowViewState.IdRef="Sequence_57">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <uix:NSelectItem DelayAfter="2" DelayBefore="2" DisplayName="Select Item 'Select State*'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NSelectItem_27" Item="AL&#xA;                                        Alabama" ScopeIdentifier="55fe380f-4dcf-4e05-997d-6ee3c0ae967d" Version="V3">
+                                    <uix:NSelectItem.Items>
+                                      <scg:List x:TypeArguments="x:String" Capacity="50">
+                                        <x:String xml:space="preserve">AL
+                                        Alabama</x:String>
+                                        <x:String xml:space="preserve">AK
+                                        Alaska</x:String>
+                                        <x:String xml:space="preserve">AZ
+                                        Arizona</x:String>
+                                        <x:String xml:space="preserve">AR
+                                        Arkansas</x:String>
+                                        <x:String xml:space="preserve">CA
+                                        California</x:String>
+                                        <x:String xml:space="preserve">CO
+                                        Colorado</x:String>
+                                        <x:String xml:space="preserve">CT
+                                        Connecticu</x:String>
+                                        <x:String xml:space="preserve">DE
+                                        Delaware</x:String>
+                                        <x:String xml:space="preserve">FL
+                                        Florida</x:String>
+                                        <x:String xml:space="preserve">GA
+                                        Georgia</x:String>
+                                        <x:String xml:space="preserve">HI
+                                        Hawaii</x:String>
+                                        <x:String xml:space="preserve">ID
+                                        Idaho</x:String>
+                                        <x:String xml:space="preserve">IL
+                                        Illinois</x:String>
+                                        <x:String xml:space="preserve">IN
+                                        Indiana</x:String>
+                                        <x:String xml:space="preserve">IA
+                                        Iowa</x:String>
+                                        <x:String xml:space="preserve">KS
+                                        Kansas</x:String>
+                                        <x:String xml:space="preserve">KY
+                                        Kentucky</x:String>
+                                        <x:String xml:space="preserve">LA
+                                        Louisiana</x:String>
+                                        <x:String xml:space="preserve">ME
+                                        Maine</x:String>
+                                        <x:String xml:space="preserve">MD
+                                        Maryland</x:String>
+                                        <x:String xml:space="preserve">MA
+                                        Massachusetts</x:String>
+                                        <x:String xml:space="preserve">MI
+                                        Michigan</x:String>
+                                        <x:String xml:space="preserve">MN
+                                        Minnesota</x:String>
+                                        <x:String xml:space="preserve">MS
+                                        Mississippi</x:String>
+                                        <x:String xml:space="preserve">MO
+                                        Missouri</x:String>
+                                        <x:String xml:space="preserve">MT
+                                        Montana</x:String>
+                                        <x:String xml:space="preserve">NE
+                                        Nebraska</x:String>
+                                        <x:String xml:space="preserve">NV
+                                        Nevada</x:String>
+                                        <x:String xml:space="preserve">NH
+                                        New Hampshire</x:String>
+                                        <x:String xml:space="preserve">NJ
+                                        New Jersey</x:String>
+                                        <x:String xml:space="preserve">NM
+                                        New Mexico</x:String>
+                                        <x:String xml:space="preserve">NY
+                                        New York</x:String>
+                                        <x:String xml:space="preserve">NC
+                                        North Carolina</x:String>
+                                        <x:String xml:space="preserve">ND
+                                        North Dakota</x:String>
+                                        <x:String xml:space="preserve">OH
+                                        Ohio</x:String>
+                                        <x:String xml:space="preserve">OK
+                                        Oklahoma</x:String>
+                                        <x:String xml:space="preserve">OR
+                                        Oregon</x:String>
+                                        <x:String xml:space="preserve">PA
+                                        Pennsylvania</x:String>
+                                        <x:String xml:space="preserve">RI
+                                        Rhode Island</x:String>
+                                        <x:String xml:space="preserve">SC
+                                        South Carolina</x:String>
+                                        <x:String xml:space="preserve">SD
+                                        South Dakota</x:String>
+                                        <x:String xml:space="preserve">TN
+                                        Tennessee</x:String>
+                                        <x:String xml:space="preserve">TX
+                                        Texas</x:String>
+                                        <x:String xml:space="preserve">UT
+                                        Utah</x:String>
+                                        <x:String xml:space="preserve">VT
+                                        Vermont</x:String>
+                                        <x:String xml:space="preserve">VA
+                                        Virginia</x:String>
+                                        <x:String xml:space="preserve">WA
+                                        Washington</x:String>
+                                        <x:String xml:space="preserve">WV
+                                        West Virginia</x:String>
+                                        <x:String xml:space="preserve">WI
+                                        Wisconsin</x:String>
+                                        <x:String xml:space="preserve">WY
+                                        Wyoming</x:String>
+                                      </scg:List>
+                                    </uix:NSelectItem.Items>
+                                    <uix:NSelectItem.Target>
+                                      <uix:TargetAnchorable BrowserURL="https://audit.freightoptics.com/ui3/ltlinvoiceScreen" DesignTimeRectangle="1030, 530, 253, 26" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Select State*'" FullSelectorArgument="&lt;webctrl aaname='Bill To Address' tag='TABLE' /&gt;&lt;webctrl aaname='Select State*                                                   *' tableRow='4' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Bill To Address' tag='TABLE' /&gt;&lt;webctrl aaname='Select State*                                                   *' type='' tag='A' class='select2-choice ui-select-match select2-default' check:innerText='Select State*' /&gt;" Guid="95e38519-8473-48a8-acb6-636f3ab090e8" InformativeScreenshot="d92d5a4e59fe1b7bc8a9aecac097bad5.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Freight Invoice Screen' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                                        <uix:TargetAnchorable.Anchors>
+                                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                            <uix:Target DesignTimeRectangle="808, 576, 81, 10" FriendlyName="'Set BillToAddress'" FullSelectorArgument="&lt;webctrl aaname='Bill To Address' tag='TABLE' /&gt;&lt;webctrl tableRow='5' tag='I' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Bill To Address' tag='TABLE' /&gt;&lt;webctrl type='' tag='I' class='fa fa-plus' aaname='Set BillToAddress' check:innerText='Set BillToAddress' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFUAAAAOCAYAAABevFBuAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJPSURBVFhH7VTNSgMxEC59NI8+Ql/B4x578AV8AaFP4MGjlELpRfAiPUlBKHuSRV3cpUgpUiTOTGaSSTZdS7fHHfja5Mtkfr4kOxhcL0yPMyNJ9uiGBvG4MfXPr9l9fZpRvNbjODSI5daQ7SqTHeAnOUCvtaIwK7vTm44Ncet87eKvlgszKXG0hRxrM98RHVpZRDlC0P6kD8cLektxHdEgkqJiYmwSxtPK1NSwrIXI8q2ZTyMe96h42DQJqX2YR1HtQbCopd2X5Xu/1ipqAXvgoA7VGNVykOsC+nlAoVrsozgghL9JuIaNW9uHwkZFox/FogPycZui+hheVD+3FuVaVjDHumLeXpYaBZdaYo7mkKeE2OTjX5nNbfut4aXSwVL9kAcukq7tOFH5ZtCzAhMRfKNykxPNIFg8MX04TmAYHy2qPiQUQh0YfppwrOPqeHQYTrCYE9GkHukFfHEd8s6hhow/f/Yf9uTRy7GDJ3NxtzKje8ALX73dxtzgHHB5qzYApHkR2RoW0CKqapya4IPSzR8tKgrpPgHaF8fKJCfmF3+pJcUFl8IK7A1zCMc+uA+nqjeCGwj4SYSOGMw3KUIEjTq//0XVt+skUakZ1ZjEpqfPProW8ud4kjvFRfX7mxoD/PhbT3OItXKvAuAdGc8s6rYyV46HIPjdsCtKcCyCOS7Q3l5dTHR7yHSzPH/jvBDnVV6Aus1iIqznbCw317fPMrTHrYNoyKe492+ZS3+qdncQbJAnVRfBDXqcD0myRzckyR7dMBzP0gs9TsJwPDN/WD5D5Q4pr/8AAAAASUVORK5CYII=" SearchSteps="Selector" />
+                                          </scg:List>
+                                        </uix:TargetAnchorable.Anchors>
+                                      </uix:TargetAnchorable>
+                                    </uix:NSelectItem.Target>
+                                  </uix:NSelectItem>
+                                </Sequence>
+                              </ui:CommentOut.Body>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </ui:CommentOut>
+                            <uix:NMouseScroll KeyModifiers="{x:Null}" Direction="Down" DisplayName="Mouse Scroll 'Consignee Address'" sap:VirtualizedContainerService.HintSize="387.2,157.6" sap2010:WorkflowViewState.IdRef="NMouseScroll_10" InteractionMode="HardwareEvents" MovementUnits="1" ScopeIdentifier="55fe380f-4dcf-4e05-997d-6ee3c0ae967d" Version="V3">
+                              <uix:NMouseScroll.Target>
+                                <uix:TargetAnchorable BrowserURL="https://audit.freightoptics.com/ui3/ltlinvoiceScreen" DesignTimeRectangle="709, 537, 494, 30" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Consignee Address'" FullSelectorArgument="&lt;webctrl aaname='Consignee Address' tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='TH' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Consignee Address' tag='TABLE' /&gt;&lt;webctrl type='' tag='TH' class='' aaname='Consignee Address' check:innerText='Consignee Address' /&gt;" Guid="f9a71cb8-61a0-41e9-8e84-ff2c6b320409" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAfIAAAAiCAYAAACk2FtLAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAPuSURBVHhe7ZnNSutAGED7jIW+UMmrtAs3LgRBUBCEFlT0CVy5cCe4dDW3SeabfPNl+lWvXp3bnAMHbTOZ/Kg5SZ0Fw3q9DicnJ+H09DScnZ2F8/PzcHFxEa6ursL19XW4ubkJm80mbLfbcHt7G+7u7sL9/X14eHgIj4+PnZeXl5+y5fX1tfMrvL29fdnZbJYJAABQM4TcSMgBAOB/gpAbbcifnp4QERGrUyDkRhtyAACA2iDkjoQcAABqh5A7EnIAAKgdQu5IyAEAoHYIuSMhBwCA2iHkjoQcAABqh5A7EnIAAKgdQu5IyAEAoHYIuSMhBwCA2iHkjoR8urys5+bn34RNXPbdyLaabXyjMjbL9vjnYfUc39jLS1gtdmMXq913BZ5XYb47zvm6uBQA/hJC7phfyAn5NIgxMuHuY/ZvIlR3yDehib//h4+dkAP8BoTcUQIuwvHTR/UjT58TYduov4FDn0oQcoDfgJA76oi3wrFzIEQZw5Nq53JInDy9a4en7cJ6MZZpTAxeGtMZI5qFNaq2PVrXHotdX687Qn06Yfcxkv8LYh7m2fmT9aOL3fLd1z7k+jzIjZMZn91Q2bn6bdjtcwMGU4SQOw4XiF44dmJc3Li12HH5awl5H7385qBfZp5sdSQlxDJ3CrMJeVyefYIweuLNtz26YTh0vNl8cS49Ns6Xtif7lh3rENf83xNx2zb66XV+bMVPSkbHCzBNCLljd1FSwrEzjkmJUlT0ezbW+nU/Lv5OSRR1YLvv87mz+WyM1ets7ky9XyXNjUXEHqd9bY9zN0Kdv8JNQhZeszzdsIztxstNQmv6+cQ5OvNzBjAlCLljunBE4fixsSpRGqPf80LeoaPUhkzHufs+n/tzId+/7+PweuhI5soT8HeEPD1Nf+TpWsc+xTxus3vf/7kBHCuE3FFfvFphCkgY8uD10ZKA2kjlr23gygFV6+g4S6xk7hSvuL4T8jQ2i5yKWxyb77fdr4jdTocO9Y44JsVX5o/L++Meti/nsBhymVuNb29MxmE3+xD5yA0YwLFCyB27i5ISpoNEZ3BPiMUUR1m3FHKJlbgnzvrJUzTxLIa8xa67aEKzVnsusRWXTVgVnoLtMST2bD9TRXZ8HveFvMWen3lolqtuH/J5YrDNtsfRB5gGhNxRXyRaAX4e9eQOAFCAkDsScvhxDjzhAgBYCLmjvaACAADUBiF3JOQAAFA7hNyRkAMAQO0QckdCDgAAtUPIHQk5AADUDiF3JOQAAFA7hNyRkAMAQO0QckdCDgAAtUPIHW3I25OFiIhYmwIhNxJyRET8HxQIudGG/P39HfHXbP9YS+8j4rQdQh7CH67Su3+MIQ5nAAAAAElFTkSuQmCC" InformativeScreenshot="0d77024f883cad90888ce4d4c90d5d09.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Freight Invoice Screen' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive">
+                                  <uix:TargetAnchorable.Anchors>
+                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                      <uix:Target DesignTimeRectangle="709, 287, 494, 30" ElementType="Text" FriendlyName="'Shipper Address'" FullSelectorArgument="&lt;webctrl aaname='Shipper Address' tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='TH' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Shipper Address' tag='TABLE' /&gt;&lt;webctrl type='' tag='TH' class='' aaname='Shipper Address' check:innerText='Shipper Address' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAfIAAAAiCAYAAACk2FtLAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAOfSURBVHhe7dnNSiNBFIbhXGODNxRyK8nCjQtBEBSEQAIqegWuXLgTXLqq6frtU6crJ4qKJfM+8IFJZzqJOHlNXDhls9m409NTd3Z25s7Pz93FxYW7vLx019fX7ubmxm23W7fb7dx+v3e3t7fu7u7O3d/fu4eHB/f4+Bh2dXX1qXmvr69hX/H29vblLRaLagAA9IyQqxFyAMBfQsjVdMifnp4YY4yx7pYRcjUdcgAAekPIjRFyAEDvCLkxQg4A6B0hN0bIAQC9I+TGCDkAoHeE3BghBwD0jpAbI+QAgN4RcmOEHADQO0JujJADAHpHyI0Rchy2c6vys7EaL3kvbn0yXj5Zj19p6fbNY7/kee0G/5iW8dFbdkv5POeOHQfwcwi5MUKOthTsFMAQsfD13wr5y2ZIP9vHA0zIgX4RcmOEHG0p2OPPxGqfrgqskPdmeg5+w8Z+xIQc6BchN5Zf5PKALIYrbop5Hce4wa2fxbEUefnvy8pH3K3z6Njq2+T7GY+Ud9rjDn1svl+F48NmVz2uIh3P5x7CfYlQG8eb91/dXlzvqWPx+yn/dKFuD6BCyI3JFxc/YFKHNMYnX5ejmmIUItQOefklIP29OsZan2eUYlfdj4hvjGe8fQ7p9AvGXPUOOpxb3Jf+23m+nG9/5Pjs/qvH7snvi/x6wjt84OMIuTH/4iMH1ETMQ1R1YOXl+lgIlQixN12XblvFTVxXwjmf/0VARr1Nx7O+3Pr3MqyfPR6PteZvn55Xui7HPv8yEKYiD6BGyI2VF5I0YC6HSETpoyFX7zhnIS/n8dJ1IuSH/q4dI1ifW6oiWa0dYu/zIZ/uv/VctXibOP1OPoyYAwcRcmPlRSQNCFJIc3AOB/hYyEWMqzin24r7aH60LmLq45nPpUNa048xkefP7/hzPMsnAOmcR47P7j8HucTYfwLQeHyzj+C99kfvACaE3Fh48REDshir/LORo6QjKS/Xx+Q70LISqxzqevU7cH2bwa2W6/A4zJBXvzBI6rGXOMuJcxrHm/cv3137LVdu7R+DPk/4HujnduC5AAgIubHphSQO+C72x80qqgBgIOTGCDl+CiEH8F0IuTFCDgDoHSE3RsgBAL0j5MYIOQCgd4TcGCEHAPSOkBsj5ACA3hFyY4QcANA7Qm6MkAMAekfIjRFyAEDvCLkxHXL/zWKMMcZ6W0bI1Qg5Y4yxv7CMkKvpkL+/vzP2a/P/WVvXM8b+700hd+4fauwzHxo7OqAAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image" />
+                                    </scg:List>
+                                  </uix:TargetAnchorable.Anchors>
+                                </uix:TargetAnchorable>
+                              </uix:NMouseScroll.Target>
+                            </uix:NMouseScroll>
+                            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DelayBetweenKeys="0.8" DisplayName="Type Into 'Name*'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="387.2,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_10" ScopeIdentifier="55fe380f-4dcf-4e05-997d-6ee3c0ae967d" Version="V3">
+                              <uix:NTypeInto.Target>
+                                <uix:TargetAnchorable BrowserURL="https://audit.freightoptics.com/ui3/ltlinvoiceScreen" DesignTimeRectangle="779, 603, 219, 34" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl aaname='Shipper Address' tag='TABLE' /&gt;&lt;webctrl tableRow='2' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Shipper Address' tag='TABLE' /&gt;&lt;webctrl type='' tag='INPUT' class='ng-pristine ng-invalid ng-invalid-required ng-touched' aaname='' /&gt;" Guid="31b2c442-9dfa-4f30-b592-7cc01b2c9f2f" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAN8AAAAmCAYAAABEZE79AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEeSURBVHhe7d2xbYNgFIXRjEDp2bwCwzIIE2AJ/uRKxgqK7Sb+ec050m2M2090vK8fLVuWxcxO3CO+2+3W1nVtQB/pK539iW/btjZNU7ter+1yubRhGMzsA0tP6Sp9pbM9wEd8eSA6s35LX+ksb8BDfCkzfxjHsc3zfH9RAv+VntJV+kpncYhvf+sJDz4vXe1vvzjElwcZ0MfvxsQHJxIfFBEfFBEfFBEfFBEfFBEfFBEfFBEfFBEfFBEfFBEfFBEfFBEfFBEfFBEfFBEfFBEfFBEfFBEfFBEfFBEfFBEfFBEfFBEfFHkZn8/FQz9vPxfvUAr0kZ7eHkpxIsys79LX0xNhjmOa9Vl6Slfp6+lxTGehoa+XZ6H3H8zsjC3tG4N9HAMAPKeqAAAAAElFTkSuQmCC" InformativeScreenshot="2a5427ec552de4ca8ea59642537551b0.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Freight Invoice Screen' /&gt;" SearchSteps="FuzzySelector, Image" Version="V2" Visibility="Interactive">
+                                  <uix:TargetAnchorable.Anchors>
+                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                      <uix:Target DesignTimeRectangle="779, 586, 44, 12" ElementType="Text" FriendlyName="'Name*'" FullSelectorArgument="&lt;webctrl aaname='Shipper Address' tag='TABLE' /&gt;&lt;webctrl tableRow='2' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Shipper Address' tag='TABLE' /&gt;&lt;webctrl type='' tag='LABEL' class='control-label' aaname='Name*:' check:innerText='Name*:' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADAAAAAQCAYAAABQrvyxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEfSURBVEhL7ZNtDsMgCIY9okkP1HgUexN3kP7wFv5iKFLxo2u3ZGuarMmbqAXhAVT4QVQI4Zb6A1ytArBa0HE9O2HgwHRnP9TDgJos+NG/rB4AZR5scBWABzsp0LNBWVovfmC3A6CUAZcMrgPwawC/aMxFg8X12G4AoKfoxMQtAFWGfVhcHTeP/rnKp3QXFUdE2LZxqAMm5ZBiZHt5B+7JeQNAQ0pEI3kNUM7JmRNuAShAga33ubtdMoNut2/gLMB2GXYjjVW6dBCg8mEAHr9+TyNBe4btVezPCH3IsU2mau/XAN5LdqR9ADnvOWkKqg9G6BzAVqCtILFAB0DnRygb5DNZdU5a6iOAKNnlKHywVsZv9RJAGt5If4CrdXOAAE/H4PLtmfCkmgAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
+                                    </scg:List>
+                                  </uix:TargetAnchorable.Anchors>
+                                </uix:TargetAnchorable>
+                              </uix:NTypeInto.Target>
+                              <uix:NTypeInto.Text>
+                                <InArgument x:TypeArguments="x:String">
+                                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_107">CurrentRow["Shipper Name"].ToString().Trim() + "[k(Tab)]"+ CurrentRow["Shipper Address"].ToString().Trim()+"[k(Tab)]"+ CurrentRow["Shipper City"].ToString().Trim().Replace(",","")+"[k(Tab)]"+ CurrentRow["Shipper Postal Code"].ToString().Trim()+"[k(Tab)]"</CSharpValue>
+                                </InArgument>
+                              </uix:NTypeInto.Text>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </uix:NTypeInto>
+                            <uix:NSelectItem DisplayName="Select Item 'Select Country*'" sap:VirtualizedContainerService.HintSize="387.2,157.6" sap2010:WorkflowViewState.IdRef="NSelectItem_28" Item="US&#xA;                                        United States" ScopeIdentifier="55fe380f-4dcf-4e05-997d-6ee3c0ae967d" Version="V3">
+                              <uix:NSelectItem.Items>
+                                <scg:List x:TypeArguments="x:String" Capacity="50">
+                                  <x:String xml:space="preserve">SJ
+                                        Svalbard</x:String>
+                                  <x:String xml:space="preserve">SZ
+                                        Swaziland</x:String>
+                                  <x:String xml:space="preserve">SE
+                                        Sweden</x:String>
+                                  <x:String xml:space="preserve">CH
+                                        Switzerland</x:String>
+                                  <x:String xml:space="preserve">SY
+                                        Syria</x:String>
+                                  <x:String xml:space="preserve">TW
+                                        Taiwan</x:String>
+                                  <x:String xml:space="preserve">TJ
+                                        Tajikistan</x:String>
+                                  <x:String xml:space="preserve">TZ
+                                        Tanzania</x:String>
+                                  <x:String xml:space="preserve">TH
+                                        Thailand</x:String>
+                                  <x:String xml:space="preserve">GM
+                                        The Gambia</x:String>
+                                  <x:String xml:space="preserve">TL
+                                        Timor-Leste</x:String>
+                                  <x:String xml:space="preserve">TG
+                                        Togo</x:String>
+                                  <x:String xml:space="preserve">TK
+                                        Tokelau</x:String>
+                                  <x:String xml:space="preserve">TO
+                                        Tonga</x:String>
+                                  <x:String xml:space="preserve">TT
+                                        Trinidad and Tobago</x:String>
+                                  <x:String xml:space="preserve">TN
+                                        Tunisia</x:String>
+                                  <x:String xml:space="preserve">TR
+                                        Turkey</x:String>
+                                  <x:String xml:space="preserve">TM
+                                        Turkmenistan</x:String>
+                                  <x:String xml:space="preserve">TC
+                                        Turks and Caicos Islands</x:String>
+                                  <x:String xml:space="preserve">TV
+                                        Tuvalu</x:String>
+                                  <x:String xml:space="preserve">UG
+                                        Uganda</x:String>
+                                  <x:String xml:space="preserve">UA
+                                        Ukraine</x:String>
+                                  <x:String xml:space="preserve">AE
+                                        United Arab Emirates</x:String>
+                                  <x:String xml:space="preserve">GB
+                                        United Kingdom</x:String>
+                                  <x:String xml:space="preserve">US
+                                        United States</x:String>
+                                  <x:String xml:space="preserve">UY
+                                        Uruguay</x:String>
+                                  <x:String xml:space="preserve">VI
+                                        US Virgin Islands</x:String>
+                                  <x:String xml:space="preserve">UZ
+                                        Uzbekistan</x:String>
+                                  <x:String xml:space="preserve">VU
+                                        Vanuatu</x:String>
+                                  <x:String xml:space="preserve">VA
+                                        Vatican City</x:String>
+                                  <x:String xml:space="preserve">VE
+                                        Venezuela</x:String>
+                                  <x:String xml:space="preserve">VN
+                                        Vietnam</x:String>
+                                  <x:String xml:space="preserve">WF
+                                        Wallis and Futuna</x:String>
+                                  <x:String xml:space="preserve">EH
+                                        Western Sahara</x:String>
+                                  <x:String xml:space="preserve">YE
+                                        Yemen</x:String>
+                                  <x:String xml:space="preserve">ZM
+                                        Zambia</x:String>
+                                  <x:String xml:space="preserve">ZW
+                                        Zimbabwe</x:String>
+                                  <x:String xml:space="preserve">TP
+                                        EAST TIMOR</x:String>
+                                  <x:String xml:space="preserve">BQ
+                                        BONAIRE</x:String>
+                                  <x:String xml:space="preserve">GP
+                                        GUADELOUPE</x:String>
+                                  <x:String xml:space="preserve">MQ
+                                        MARTINIQUE</x:String>
+                                  <x:String xml:space="preserve">BQ
+                                        ST. EUSTATIUS</x:String>
+                                  <x:String xml:space="preserve">GF
+                                        FRENCH GUIANA</x:String>
+                                  <x:String xml:space="preserve">CG
+                                        Congo</x:String>
+                                  <x:String xml:space="preserve">YT
+                                        MAYOTTE</x:String>
+                                  <x:String xml:space="preserve">RE
+                                        REUNION, ISLAND OF</x:String>
+                                  <x:String xml:space="preserve">UK
+                                        Channel Islands (UK)</x:String>
+                                  <x:String xml:space="preserve">BQ
+                                        SABA</x:String>
+                                  <x:String xml:space="preserve">FM
+                                        MICRONESIA</x:String>
+                                  <x:String xml:space="preserve">Cc
+                                        IVORY COAST</x:String>
+                                </scg:List>
+                              </uix:NSelectItem.Items>
+                              <uix:NSelectItem.Target>
+                                <uix:TargetAnchorable BrowserURL="https://audit.freightoptics.com/ui3/ltlinvoiceScreen" DesignTimeRectangle="800, 530, 219, 26" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Select Country*'" FullSelectorArgument="&lt;webctrl aaname='Shipper Address' tag='TABLE' /&gt;&lt;webctrl tableRow='4' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Shipper Address' tag='TABLE' /&gt;&lt;webctrl type='' tag='A' class='select2-choice ui-select-match select2-default' aaname='Select Country*                                                                                 ' check:innerText='Select Country*' /&gt;" Guid="35696145-80f2-4bed-9d12-41a02ef867f7" InformativeScreenshot="5d2e9d461b9fa31e75cef25baf4b6bb5.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Freight Invoice Screen' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                                  <uix:TargetAnchorable.Anchors>
+                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                      <uix:Target DesignTimeRectangle="794, 353, 494, 30" ElementType="Text" FriendlyName="'Shipper Address'" FullSelectorArgument="&lt;webctrl aaname='Shipper Address' tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='TH' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Shipper Address' tag='TABLE' /&gt;&lt;webctrl type='' tag='TH' class='' aaname='Shipper Address' check:innerText='Shipper Address' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAfIAAAAiCAYAAACk2FtLAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALhSURBVHhe7dlBTuMwGIBROGMlDoR6lXIUOAUrFnMGVpnasRPbSVNaJgJr3pN+icYhSZHQ16QPAwDQLSEHgI49vL+/D8YYY4zZb/bkjhwAdiTkANAxIQeAjgk5AHRMyAGgY0IOAB0TcgDomJADQMeEHAA6JuRwl9fh+Pg4PMY5nl8Ff4bT0/n10+n8Uyvtv7r2Qz5OwyFc0/N49Vten8v3uXRtHdiPkMPNUrBTAGPE4s99hfzPy6H5IHKZkMPvJeRwsxTscwSPb2lTtBXy32Z+D2EOL9tXLOTwewk53GEM1zhzzOs4jnMYTh/FWop8+fvTTI+4147TxrbdJ5/nvDLdaZ/n0mPzt2NcP7y8Vtc1Sev52Id4riLUG+ur56/2L7YHzdr49yy/umj2BypCDnepQzrGJ2/LUU0xihFaD/n0ISB9Xz3Guj3OWYpddZ4ivmM8x/1zSOcPGEvVHXQ8dnGu9rvz/Drvf2V9cf7q2oPy71L+PHOHD18n5HC3IuYxqm1gy9f1WgxVEeJg3pb2reJWbJvCuZzwQaCM+ro2nvXrtd8vw3rr+ri2NmH/9L7Sthz7/GEgThN5oCbk8C05REWUvhry5o5zEfLpOEHaVoT80vfaYwTrY5eqSFazHuLg9pDP5197r61xn3HaO/k4Yg4XCTncKoU0B+dygK+FvIhxFee0b3GO1UfrRUxDPPOx2pDW2mtMyuPnO/4cz+kJQDrmlfXF+XOQpxiHJwAr17d4BB+sP3oHZkIOdxhjFeI1B2wZyfJ1vVbegU4zxSqHup76Drzd5zAcn0/xOjZDXn1gKDXXPsW5nOKYG+ur5y/vrsM8H4dTuIb2OPFv0L63C+8FiIQcfsD24+YmqgAbhBx+gJAD/4qQA0DHhBwAOibkANAxIQeAjgk5AHRMyAGgY0IOAB0TcgDo2O4hDycwxhhjzH6zJyE3xhhjdp49PXx+fg7GmO9P+Gdd226M+b9n35APw18JxOWJTZpJUAAAAABJRU5ErkJggg==" SearchSteps="Selector" />
+                                    </scg:List>
+                                  </uix:TargetAnchorable.Anchors>
+                                </uix:TargetAnchorable>
+                              </uix:NSelectItem.Target>
+                            </uix:NSelectItem>
+                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Select State*'" sap:VirtualizedContainerService.HintSize="387.2,157.6" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="55fe380f-4dcf-4e05-997d-6ee3c0ae967d" Version="V3">
+                              <uix:NClick.Target>
+                                <uix:TargetAnchorable BrowserURL="https://audit.freightoptics.com/ui3/ltlinvoiceScreen" DesignTimeRectangle="1016, 625, 195, 23" DesignTimeScaleFactor="0.8999999761581421" ElementType="Text" FriendlyName="'Select State*'" FullSelectorArgument="&lt;webctrl aaname='Shipper Address' tag='TABLE' /&gt;&lt;webctrl aaname='Select State*' tableRow='4' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Shipper Address' tag='TABLE' /&gt;&lt;webctrl aaname='Select State*' type='' tag='SPAN' class='select2-chosen ng-binding' check:innerText='Select State*' /&gt;" Guid="3e38a0aa-eab6-4d54-a089-2726df4ec598" InformativeScreenshot="20192f098e8fb6a62132d82d6c61d921.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Freight Invoice Screen' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive">
+                                  <uix:TargetAnchorable.Anchors>
+                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                      <uix:Target DesignTimeRectangle="1008, 609, 34, 11" ElementType="Text" FriendlyName="'State*'" FullSelectorArgument="&lt;webctrl aaname='Shipper Address' tag='TABLE' /&gt;&lt;webctrl aaname='State*:' tableRow='4' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Shipper Address' tag='TABLE' /&gt;&lt;webctrl aaname='State*:' type='' tag='LABEL' class='control-label' check:innerText='State*:' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACYAAAAPCAYAAACInr1QAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAECSURBVEhL7ZNBDoQgDEU5IskcyHAUvAkexAW3YNUphdaKqGEyCxcufiLk0z5/waSU4Il6wUalwCL4jwFjsiz4tezH2YL5eIjiO9Hqwapzp0KfmwP2chAWB27peFACRgAGzfw9hW3/j2BxCRCoFwaAPQKue74GrJjFgH9Ee1kVTnxKDos7WdsCR6Cbx86x1OwkpkPh3mqUqrhKaJdYBeX4GZLWOrEKJWNq141uwLIUXGeUYdpDs78FY+CD9DRu1IBl8SNQ9+0nsH0CoxIwatpJSX+PjlLuVT53kVbvRypYxNdSilHk3IAPqZQYRusAlr0Vjj0Wa5wleAH2PL1go3ooWIIvABSwyKzYMuEAAAAASUVORK5CYII=" SearchSteps="Selector" />
+                                    </scg:List>
+                                  </uix:TargetAnchorable.Anchors>
+                                </uix:TargetAnchorable>
+                              </uix:NClick.Target>
+                            </uix:NClick>
+                            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DelayAfter="1" DisplayName="Type Into 'chrome.exe Freight'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="387.2,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_13" ScopeIdentifier="55fe380f-4dcf-4e05-997d-6ee3c0ae967d" Version="V3">
+                              <uix:NTypeInto.Target>
+                                <uix:TargetAnchorable BrowserURL="https://audit.freightoptics.com/ui3/ltlinvoiceScreen" DesignTimeRectangle="1397, 584, 315, 47" DesignTimeScaleFactor="1.25" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl aaname='Shipper Address' tag='TABLE' /&gt;&lt;webctrl tableCol='2' tableRow='4' tag='INPUT' type='search' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Shipper Address' tag='TABLE' /&gt;&lt;webctrl class='ui-select-search select2-input ng-pristine ng-valid ng-touched' aaname='' tag='INPUT' type='search' /&gt;" Guid="937a36d3-50ab-4b83-ad44-d5e77cfff481" InformativeScreenshot="bfb071287ffab9aa39cadae4ef6ef3d9.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Freight Invoice Screen' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                                  <uix:TargetAnchorable.Anchors>
+                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                      <uix:Target DesignTimeRectangle="1337, 333, 142, 36" FriendlyName="'chrome.exe Freight'" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAI4AAAAkCAYAAABfegKAAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAALWSURBVHhe7ZZtbsMgDIZzxki7UJWrpEdpT9Ff+9FjMEgwGAcn4GzdOr2PZGmjjvHHC8ngADAA4QATEA4wAeEAExAOMAHhABMQDjAB4QATEA4wAeEAExAOMAHhABMG4dzcNAxuiDZen3Hd8zm7Max/zI6tFjyv4/rs5RZX3oPbZa13useFFhr6sdDq94foFM7TzR9rAwsjEfxb4bDD0jNcCCciCwz/82LfsAEtJLEvNrr5M/5wBIRD5JNXvbJ5A+5TbjZvCK3HGye/AspXoGxiq98C37vis8byAriufsXrdgPdsqObLquANH/KcbXJ3RRB7PvF+vzfM+WZhLq98eUcSpH72HHd71r0bb/mY/q/cdhQNptTA2pGryZFOFVjDW/1KxvHLTexjHVwg1BNS77UfD6QgPIKJ0v5tfhpB0OsM0tzkAcm2PJ8fd+u7zWB4ePYwxPk3ypMOJRUGiQ1QBNOalAgN4niNPml/YUYtD157grkK+spmp76odwOsvZdv23tgXrO9GyMt6mT9hF+oU8Nte9hE84COwGUBA2OD1euKUMsBhGw+KXBKBZzoFjH13Wsca8eD4lJvYGjb5sf9VURl2LUlyQwtrZAewTj9Rg5IZwAFRmv7kpTN2u/KZyYpxpLoL/2guXB/oxw+OvwWDhlzMqhjuSauDD76RTOWkBKMqn4vHCqz3jbnKQ9P5mPQptwOoaVBKvcErL2Xb+acHLOG9EVhFj0nIjj96ZnVQF30CUc9QSSqs8Ip2YsTqufmqM3KcJd4VDe4sSubIf7fXXUhZP3rFiMX4/t47ADxu1lwlmQSfDGnhDOdBcnXAys1W8hnWyy8lrOseJChSOf2u+laNnAeD88+36acAKi9mBKn1LsuC7ndkY0gZPfOOdpGWKg1Q+8BggHmIBwgIlfFw54TyAcYALCASYgHGACwgEmIBxgAsIBJiAcYALCASaGx+PhYLA+e7gvf1yH26FNvt4AAAAASUVORK5CYII=" SearchSteps="Image" TargetType="ImageBased" />
+                                    </scg:List>
+                                  </uix:TargetAnchorable.Anchors>
+                                </uix:TargetAnchorable>
+                              </uix:NTypeInto.Target>
+                              <uix:NTypeInto.Text>
+                                <InArgument x:TypeArguments="x:String">
+                                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_118">CurrentRow["Shipper State"].ToString().Trim()</CSharpValue>
+                                </InArgument>
+                              </uix:NTypeInto.Text>
+                            </uix:NTypeInto>
+                            <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DelayBefore="1" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="387.2,178.4" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_2" Shortcuts="[d(hk)][k(enter)][u(hk)]" Version="V3" />
+                            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="387.2,52.8" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+                              <ui:CommentOut.Body>
+                                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,268" sap2010:WorkflowViewState.IdRef="Sequence_58">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <uix:NSelectItem DelayBefore="2" DisplayName="Select Item 'Select State*'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NSelectItem_29" Item="TX&#xA;                                        Texas" ScopeIdentifier="55fe380f-4dcf-4e05-997d-6ee3c0ae967d" Version="V3">
+                                    <uix:NSelectItem.Items>
+                                      <scg:List x:TypeArguments="x:String" Capacity="50">
+                                        <x:String xml:space="preserve">AL
+                                        Alabama</x:String>
+                                        <x:String xml:space="preserve">AK
+                                        Alaska</x:String>
+                                        <x:String xml:space="preserve">AZ
+                                        Arizona</x:String>
+                                        <x:String xml:space="preserve">AR
+                                        Arkansas</x:String>
+                                        <x:String xml:space="preserve">CA
+                                        California</x:String>
+                                        <x:String xml:space="preserve">CO
+                                        Colorado</x:String>
+                                        <x:String xml:space="preserve">CT
+                                        Connecticu</x:String>
+                                        <x:String xml:space="preserve">DE
+                                        Delaware</x:String>
+                                        <x:String xml:space="preserve">FL
+                                        Florida</x:String>
+                                        <x:String xml:space="preserve">GA
+                                        Georgia</x:String>
+                                        <x:String xml:space="preserve">HI
+                                        Hawaii</x:String>
+                                        <x:String xml:space="preserve">ID
+                                        Idaho</x:String>
+                                        <x:String xml:space="preserve">IL
+                                        Illinois</x:String>
+                                        <x:String xml:space="preserve">IN
+                                        Indiana</x:String>
+                                        <x:String xml:space="preserve">IA
+                                        Iowa</x:String>
+                                        <x:String xml:space="preserve">KS
+                                        Kansas</x:String>
+                                        <x:String xml:space="preserve">KY
+                                        Kentucky</x:String>
+                                        <x:String xml:space="preserve">LA
+                                        Louisiana</x:String>
+                                        <x:String xml:space="preserve">ME
+                                        Maine</x:String>
+                                        <x:String xml:space="preserve">MD
+                                        Maryland</x:String>
+                                        <x:String xml:space="preserve">MA
+                                        Massachusetts</x:String>
+                                        <x:String xml:space="preserve">MI
+                                        Michigan</x:String>
+                                        <x:String xml:space="preserve">MN
+                                        Minnesota</x:String>
+                                        <x:String xml:space="preserve">MS
+                                        Mississippi</x:String>
+                                        <x:String xml:space="preserve">MO
+                                        Missouri</x:String>
+                                        <x:String xml:space="preserve">MT
+                                        Montana</x:String>
+                                        <x:String xml:space="preserve">NE
+                                        Nebraska</x:String>
+                                        <x:String xml:space="preserve">NV
+                                        Nevada</x:String>
+                                        <x:String xml:space="preserve">NH
+                                        New Hampshire</x:String>
+                                        <x:String xml:space="preserve">NJ
+                                        New Jersey</x:String>
+                                        <x:String xml:space="preserve">NM
+                                        New Mexico</x:String>
+                                        <x:String xml:space="preserve">NY
+                                        New York</x:String>
+                                        <x:String xml:space="preserve">NC
+                                        North Carolina</x:String>
+                                        <x:String xml:space="preserve">ND
+                                        North Dakota</x:String>
+                                        <x:String xml:space="preserve">OH
+                                        Ohio</x:String>
+                                        <x:String xml:space="preserve">OK
+                                        Oklahoma</x:String>
+                                        <x:String xml:space="preserve">OR
+                                        Oregon</x:String>
+                                        <x:String xml:space="preserve">PA
+                                        Pennsylvania</x:String>
+                                        <x:String xml:space="preserve">RI
+                                        Rhode Island</x:String>
+                                        <x:String xml:space="preserve">SC
+                                        South Carolina</x:String>
+                                        <x:String xml:space="preserve">SD
+                                        South Dakota</x:String>
+                                        <x:String xml:space="preserve">TN
+                                        Tennessee</x:String>
+                                        <x:String xml:space="preserve">TX
+                                        Texas</x:String>
+                                        <x:String xml:space="preserve">UT
+                                        Utah</x:String>
+                                        <x:String xml:space="preserve">VT
+                                        Vermont</x:String>
+                                        <x:String xml:space="preserve">VA
+                                        Virginia</x:String>
+                                        <x:String xml:space="preserve">WA
+                                        Washington</x:String>
+                                        <x:String xml:space="preserve">WV
+                                        West Virginia</x:String>
+                                        <x:String xml:space="preserve">WI
+                                        Wisconsin</x:String>
+                                        <x:String xml:space="preserve">WY
+                                        Wyoming</x:String>
+                                      </scg:List>
+                                    </uix:NSelectItem.Items>
+                                    <uix:NSelectItem.Target>
+                                      <uix:TargetAnchorable BrowserURL="https://audit.freightoptics.com/ui3/ltlinvoiceScreen" DesignTimeRectangle="945, 530, 253, 26" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Select State*'" FullSelectorArgument="&lt;webctrl aaname='Shipper Address' tag='TABLE' /&gt;&lt;webctrl aaname='Select State*                                                   *' tableRow='4' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Shipper Address' tag='TABLE' /&gt;&lt;webctrl aaname='Select State*                                                   *' type='' tag='A' class='select2-choice ui-select-match select2-default' check:innerText='Select State*' /&gt;" Guid="49ab4018-f2ba-42cc-8ca6-395f02e1e21d" InformativeScreenshot="ee521cbcde91c8f3b287385459faf326.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Freight Invoice Screen' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                                        <uix:TargetAnchorable.Anchors>
+                                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                            <uix:Target DesignTimeRectangle="709, 353, 494, 30" ElementType="Text" FriendlyName="'Shipper Address'" FullSelectorArgument="&lt;webctrl aaname='Shipper Address' tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='TH' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Shipper Address' tag='TABLE' /&gt;&lt;webctrl type='' tag='TH' class='' aaname='Shipper Address' check:innerText='Shipper Address' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAfIAAAAiCAYAAACk2FtLAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAOoSURBVHhe7ZnNSutAGED7jAFfqPRV2oUbF0JBqCAILajYJ3Dlwp3gsqu5md9882WaKmm103sOHGgycZKUxtOkE6NYLBbm+vra3NzcmNvbW7NcLs3d3Z25v783Dw8P5vHx0azXa7PZbMzT05N5fn42Ly8v5vX11Wy3W+dqtfqRls/PT+cYvr6+RjuZTDIBAADOGUKuJOQAAFAThFx5zJC/vb0hIiKeVEKuPHbIAQAATgkhVxJyAACoCUKuJOQAAFAThFxJyAEAoCYIuZKQAwBATRByJSEHAICaIORKQg4AADVByJWEHAAAaoKQKwk5AADUBCFXEnKA32RtZul6m7VLlg8zv2qXr+btK03Yvjj2R7zPTWOPaeqPfoj1VJ5nn0PjACUIuZKQA/wWIdghgC5i7nVdIf9YNOH/xeEAE3I4BYRcScgBfosQ7PY6m23CKsdQyM+N7hyszWL4iAk5nAJCrowXZHQMhBxgGB8ubxfzPI7exszfxViIvPz7ZHrEXZpHx1ZvE/fTjqQ77dZ9j803MzfeLNbZcSXCeJy7cfsSoR4YL+4/216st6gx/37Kny7U9nAxEHKlvBCsYyDkAIfIQ+rjE9fFqIYYuQiVQ56+BITfq32s9TwtIXbZfkR8fTz99jGk3ReMPtkdtJtb7Ev/dh6X4/YHxnv7z47dIt8X+bqDO/z/A0KutBeKdAyEHOA7iJi7qOrAyuV8zIVKhNjSrQvbZnET61I4+9ovAjLqZXQ88+XS38uw/nTcj5W024fzCuti7OOXAaeKPFwOhFyZPvTBMRBygO8SQySi9N2QqzvOXsjTPJawToR83+/aPoL53JIskpnlEFt+HvJu/6Vz1fhtvPpO3knMLxJCrkwf+OAYCDnAACGkMTj7A3wo5CLGWZzDtmIfxUfrIqY2nnEuHdIcfYwBOX+844/xTE8AwpwHxnv7j0FOMbZPAArH13sEbyk/eofLgJAr3YUiHAMhBxjGxypebzFKOpJyOR+Td6DJFKsY6tz8Dlxv05jZdO6OYzDk2RcGiTr2FGepmHNgvLh/eXdtnc7M3B6Dnse9B/rc9pwLVA8hV3Yfeu8YCDnAaRl+3KyiCnChEHIlIQeoB0IOQMh7EnIAAKgJQq4k5AAAUBOEXEnIAQCgJgi5kpADAEBNEHIlIQcAgJog5EpCDgAANUHIlYQcAABqgpArCTkAANQEIVceO+SIiIinlJArCTkiItYkIVceO+S73Q4Rz0iuS7wsd+YfKvRDk0kQdwoAAAAASUVORK5CYII=" SearchSteps="Selector" />
+                                          </scg:List>
+                                        </uix:TargetAnchorable.Anchors>
+                                      </uix:TargetAnchorable>
+                                    </uix:NSelectItem.Target>
+                                  </uix:NSelectItem>
+                                </Sequence>
+                              </ui:CommentOut.Body>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </ui:CommentOut>
+                            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DelayBefore="1" DelayBetweenKeys="0.8" DisplayName="Type Into 'Name*'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="387.2,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_11" ScopeIdentifier="55fe380f-4dcf-4e05-997d-6ee3c0ae967d" Version="V3">
+                              <uix:NTypeInto.Target>
+                                <uix:TargetAnchorable BrowserURL="https://audit.freightoptics.com/ui3/ltlinvoiceScreen" DesignTimeRectangle="779, 553, 219, 34" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl aaname='Consignee Address' tag='TABLE' /&gt;&lt;webctrl tableRow='2' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Consignee Address' tag='TABLE' /&gt;&lt;webctrl type='' tag='INPUT' class='ng-pristine ng-invalid ng-invalid-required ng-touched' aaname='' /&gt;" Guid="5f1a66ee-8f2a-4622-923d-3ca6ae8a8f00" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAN8AAAAmCAYAAABEZE79AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACfSURBVHhe7dOhEcMwAARB99+jChGSY+CQONA6sjvz5PkdH+vanNPMNk58ZtG+8Y0xzGzDHuMD3iU+iIgPIuKDiPggIj6IiA8i4oOI+CAiPoiIDyLig4j4ICI+iIgPIuKDiPggIj6IiA8i4oOI+CAiPoiIDyLig4j4ICI+iIgPIuKDiPggIj6IiA8i4oPI3/jM7P39xHcfZrZn4jNLNtcJiRX9GAu1REAAAAAASUVORK5CYII=" InformativeScreenshot="fce87c495d7cca91315c17360c160677.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Freight Invoice Screen' /&gt;" SearchSteps="FuzzySelector, Image" Version="V2" Visibility="Interactive">
+                                  <uix:TargetAnchorable.Anchors>
+                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                      <uix:Target DesignTimeRectangle="779, 536, 44, 12" ElementType="Text" FriendlyName="'Name*'" FullSelectorArgument="&lt;webctrl aaname='Consignee Address' tag='TABLE' /&gt;&lt;webctrl tableRow='2' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Consignee Address' tag='TABLE' /&gt;&lt;webctrl type='' tag='LABEL' class='control-label' aaname='Name*:' check:innerText='Name*:' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADAAAAAQCAYAAABQrvyxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEfSURBVEhL7ZNtDsMgCIY9okkP1HgUexN3kP7wFv5iKFLxo2u3ZGuarMmbqAXhAVT4QVQI4Zb6A1ytArBa0HE9O2HgwHRnP9TDgJos+NG/rB4AZR5scBWABzsp0LNBWVovfmC3A6CUAZcMrgPwawC/aMxFg8X12G4AoKfoxMQtAFWGfVhcHTeP/rnKp3QXFUdE2LZxqAMm5ZBiZHt5B+7JeQNAQ0pEI3kNUM7JmRNuAShAga33ubtdMoNut2/gLMB2GXYjjVW6dBCg8mEAHr9+TyNBe4btVezPCH3IsU2mau/XAN5LdqR9ADnvOWkKqg9G6BzAVqCtILFAB0DnRygb5DNZdU5a6iOAKNnlKHywVsZv9RJAGt5If4CrdXOAAE/H4PLtmfCkmgAAAABJRU5ErkJggg==" SearchSteps="Selector" />
+                                    </scg:List>
+                                  </uix:TargetAnchorable.Anchors>
+                                </uix:TargetAnchorable>
+                              </uix:NTypeInto.Target>
+                              <uix:NTypeInto.Text>
+                                <InArgument x:TypeArguments="x:String">
+                                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_108">CurrentRow["Consignee Name"].ToString().Trim() + "[k(Tab)]"+ CurrentRow["Consignee Address"].ToString().Trim()+"[k(Tab)]"+ CurrentRow["Consignee City"].ToString().Trim().Replace(",","")+"[k(Tab)]"+ CurrentRow["Consignee Postal Code"].ToString().Trim()+"[k(Tab)]"</CSharpValue>
+                                </InArgument>
+                              </uix:NTypeInto.Text>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </uix:NTypeInto>
+                            <uix:NSelectItem DisplayName="Select Item 'Select Country*'" sap:VirtualizedContainerService.HintSize="387.2,157.6" sap2010:WorkflowViewState.IdRef="NSelectItem_25" Item="US&#xA;                                        United States" ScopeIdentifier="55fe380f-4dcf-4e05-997d-6ee3c0ae967d" Version="V3">
+                              <uix:NSelectItem.Items>
+                                <scg:List x:TypeArguments="x:String" Capacity="50">
+                                  <x:String xml:space="preserve">AF
+                                        Afghanistan</x:String>
+                                  <x:String xml:space="preserve">AX
+                                        Aland Islands</x:String>
+                                  <x:String xml:space="preserve">AL
+                                        Albania</x:String>
+                                  <x:String xml:space="preserve">DZ
+                                        Algeria</x:String>
+                                  <x:String xml:space="preserve">AS
+                                        American Samoa</x:String>
+                                  <x:String xml:space="preserve">AD
+                                        Andorra</x:String>
+                                  <x:String xml:space="preserve">AO
+                                        Angola</x:String>
+                                  <x:String xml:space="preserve">AI
+                                        Anguilla</x:String>
+                                  <x:String xml:space="preserve">AQ
+                                        Antarctica</x:String>
+                                  <x:String xml:space="preserve">AG
+                                        Antigua and Barbuda</x:String>
+                                  <x:String xml:space="preserve">AR
+                                        Argentina</x:String>
+                                  <x:String xml:space="preserve">AM
+                                        Armenia</x:String>
+                                  <x:String xml:space="preserve">AW
+                                        Aruba</x:String>
+                                  <x:String xml:space="preserve">AU
+                                        Australia</x:String>
+                                  <x:String xml:space="preserve">AT
+                                        Austria</x:String>
+                                  <x:String xml:space="preserve">AZ
+                                        Azerbaijan</x:String>
+                                  <x:String xml:space="preserve">BS
+                                        Bahamas</x:String>
+                                  <x:String xml:space="preserve">BH
+                                        Bahrain</x:String>
+                                  <x:String xml:space="preserve">BD
+                                        Bangladesh</x:String>
+                                  <x:String xml:space="preserve">BB
+                                        Barbados</x:String>
+                                  <x:String xml:space="preserve">BY
+                                        Belarus</x:String>
+                                  <x:String xml:space="preserve">BE
+                                        Belgium</x:String>
+                                  <x:String xml:space="preserve">BZ
+                                        Belize</x:String>
+                                  <x:String xml:space="preserve">BJ
+                                        Benin</x:String>
+                                  <x:String xml:space="preserve">BM
+                                        Bermuda</x:String>
+                                  <x:String xml:space="preserve">BT
+                                        Bhutan</x:String>
+                                  <x:String xml:space="preserve">BO
+                                        Bolivia</x:String>
+                                  <x:String xml:space="preserve">BA
+                                        Bosnia and Herzegovina</x:String>
+                                  <x:String xml:space="preserve">BW
+                                        Botswana</x:String>
+                                  <x:String xml:space="preserve">BR
+                                        Brazil</x:String>
+                                  <x:String xml:space="preserve">IO
+                                        British Indian Ocean Territory</x:String>
+                                  <x:String xml:space="preserve">VG
+                                        British Virgin Islands</x:String>
+                                  <x:String xml:space="preserve">BN
+                                        Brunei Darussalam</x:String>
+                                  <x:String xml:space="preserve">BG
+                                        Bulgaria</x:String>
+                                  <x:String xml:space="preserve">BF
+                                        Burkina Faso</x:String>
+                                  <x:String xml:space="preserve">BI
+                                        Burundi</x:String>
+                                  <x:String xml:space="preserve">KH
+                                        Cambodia</x:String>
+                                  <x:String xml:space="preserve">CM
+                                        Cameroon</x:String>
+                                  <x:String xml:space="preserve">CA
+                                        Canada</x:String>
+                                  <x:String xml:space="preserve">CV
+                                        Cape Verde</x:String>
+                                  <x:String xml:space="preserve">KY
+                                        Cayman Islands</x:String>
+                                  <x:String xml:space="preserve">CF
+                                        Central African Republic</x:String>
+                                  <x:String xml:space="preserve">TD
+                                        Chad</x:String>
+                                  <x:String xml:space="preserve">CL
+                                        Chile</x:String>
+                                  <x:String xml:space="preserve">CN
+                                        China</x:String>
+                                  <x:String xml:space="preserve">CX
+                                        Christmas Island</x:String>
+                                  <x:String xml:space="preserve">CC
+                                        Cocos Islands</x:String>
+                                  <x:String xml:space="preserve">CO
+                                        Colombia</x:String>
+                                  <x:String xml:space="preserve">KM
+                                        Comoros</x:String>
+                                  <x:String xml:space="preserve">CK
+                                        Cook Islands</x:String>
+                                </scg:List>
+                              </uix:NSelectItem.Items>
+                              <uix:NSelectItem.Target>
+                                <uix:TargetAnchorable BrowserURL="https://audit.freightoptics.com/ui3/ltlinvoiceScreen" DesignTimeRectangle="800, 501, 219, 26" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Select Country*'" FullSelectorArgument="&lt;webctrl aaname='Consignee Address' tag='TABLE' /&gt;&lt;webctrl tableRow='4' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Consignee Address' tag='TABLE' /&gt;&lt;webctrl type='' tag='A' class='select2-choice ui-select-match select2-default' aaname='Select Country*                                                                                 ' check:innerText='Select Country*' /&gt;" Guid="2be9a2fa-9b40-4893-a3cd-180f6eef67ed" ImageBase64="" InformativeScreenshot="0240c190e023991a4d9c5c41734cc3e6.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Freight Invoice Screen' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive">
+                                  <uix:TargetAnchorable.Anchors>
+                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                      <uix:Target DesignTimeRectangle="796, 319, 491, 33" FriendlyName="'chrome.exe Freight'" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAesAAAAhCAYAAAD594PHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMGSURBVHhe7dltbqMwEIDhnBEpF4q4CjlKeor86o8ewwtmxswMJklX3Y1Vv49kbQnms9K+kJ4SAABoGrEGAKBxxBoAgMYRawAAGkesAQBo3Ol+vycGg8FgMBjtDt6sAQBoHLEGAKBxxBoAgMYRawAAGkesAQBoHLEGAKBxxBoAgMYRawAAGkesAQBoHLFGt76uQzqdTmaM6Sbrfpoea/yQDxpzuyzXP6TpUz449JWm8zz3PM0/VXxOaZivc7hW1wL4S8QaHZLghDivwfo3oWk71rc05oeVV66dWAPvQKzRnTWcr7xFduJjzKFex7NvF4g18A7EGp15Ehtne+PM47JlTN/C7djemivbSRDLHIlamZOHhNLFU4Y59m7beC1xe7vtjvmWIZ6j8H8uGNLg7p9uL+M8r5//XWNt74M+HIX57qEp7ms9Rjw+D1noEbFGZyQgDwO2iPP8ssZ6DZt/AFjXhTdUG0KNre67xDfEWta7bwJ2b67+2LuHgmfX6/Yn+7JzZX/leHpu7lq3gPo/JcixY9jLsr+26jceu+sF+kSs0Zl9MGpq4bCfxSDb5XXesjwPDZ+NaP7Z79vtLwbXLLt9u2HPqzbCw4OI1xmX43XOM8z9qzwIuLiG9eWhZD/yfH0QWEb5/cg+8vD3DOgJsUZ3YpBqanPsZ49indnwLLGyAc4/+31/L9bH576P6yM2hH7om+xPxLq8Fb/ylmyDXoItx8yfP/69Ab8VsUaH9D9/H7U1TBrJGCK/HCNWj6TZxgZYg6T7LoGS7R/Eusx1ITMBk7n+vON5iXiczMZ4JnNKYHX/sn697u34eg+rsdZ9m/nLw8c+3uEcxCsPWcBvRazRLQ3LNg5iq6MEULetxVqDpOMgwPYNUkcIZDXWi7jteUzj1Zy5BlXHZUxT5W02XkNxcHw3TEj39/Eo1ot4f4Y0XqZ8Dn4/EuVw7H3YgT4Qa+DtzBs4AFQQa+B/e/KmCgARsQYAoHHEGgCAxhFrAAAaR6wBAGgcsQYAoHHEGgCAxhFrAACaltIfF6+zPvpgYYgAAAAASUVORK5CYII=" SearchSteps="Image" TargetType="ImageBased" />
+                                    </scg:List>
+                                  </uix:TargetAnchorable.Anchors>
+                                </uix:TargetAnchorable>
+                              </uix:NSelectItem.Target>
+                            </uix:NSelectItem>
+                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Select State*'" sap:VirtualizedContainerService.HintSize="387.2,157.6" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="55fe380f-4dcf-4e05-997d-6ee3c0ae967d" Version="V3">
+                              <uix:NClick.Target>
+                                <uix:TargetAnchorable BrowserURL="https://audit.freightoptics.com/ui3/ltlinvoiceScreen" CvElementArea="1389, 611, 321, 37" CvType="InputBox" DesignTimeRectangle="1402, 614, 274, 33" DesignTimeScaleFactor="1.25" ElementType="Text" FriendlyName="'Select State*'" FullSelectorArgument="&lt;webctrl aaname='Consignee Address' tag='TABLE' /&gt;&lt;webctrl aaname='Select State*' tableRow='4' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Consignee Address' tag='TABLE' /&gt;&lt;webctrl aaname='Select State*' type='' tag='SPAN' class='select2-chosen ng-binding' check:innerText='Select State*' /&gt;" Guid="0d8b2208-a48a-459d-bbaa-2360bfeea3f0" InformativeScreenshot="9dfca8658b2f8a75643bb1f5305cec92.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Freight Invoice Screen' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                                  <uix:TargetAnchorable.Anchors>
+                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                      <uix:Target CvTextArea="1388, 591, 50, 15" CvTextArgument="State*:" CvType="Text" DesignTimeRectangle="1391, 592, 47, 15" ElementType="Text" FriendlyName="'State*'" FullSelectorArgument="&lt;webctrl aaname='Consignee Address' tag='TABLE' /&gt;&lt;webctrl aaname='State*:' tableRow='4' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Consignee Address' tag='TABLE' /&gt;&lt;webctrl aaname='State*:' type='' tag='LABEL' class='control-label' check:innerText='State*:' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADMAAAATCAYAAAA9DTUcAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAFISURBVFhH7ZRNDoMgEEY9IkkP1HAUvIk9SBfcwtWUv4FhYJSaxrSmixejiDMPP5jWdYWr8Jf5Vi4s8zSgpgmmhH6QsYeOz+9LeTaEBXPz31Ngnr3xHULdsblEZgFNRBA12zh+tkxaWDUb15cGM6vdbxQZ3qy/p42fLmPBuqsNErio7tmQTI5YpyiKIDcTCvkxLBZRbi7+YQ1LFimU6G6NOdif0Xf/jkq90RplTrVnaGPd/YIkmSUUkNiS6Ufak2Nd1VZsgQdkPFSo+jCPGTksqHgRxEJtzPI7VWQPxpHQyARIo+IBwO8zfNV4k+3f4lSpeIO+jAeFcH+cKNNEbRAiE5vIq4LNSjIfiNnRpiWyjLSZxZg56pOMI8tsHQD0pBTJC4k1InXMsOHE5gHQnaNcw3sxQzpxayIrwWtE5D3zg/xlvpULyazwAhi5rtE3BBGOAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, CV" />
+                                    </scg:List>
+                                  </uix:TargetAnchorable.Anchors>
+                                </uix:TargetAnchorable>
+                              </uix:NClick.Target>
+                            </uix:NClick>
+                            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'chrome.exe Freight'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="387.2,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_14" ScopeIdentifier="55fe380f-4dcf-4e05-997d-6ee3c0ae967d" Version="V3">
+                              <uix:NTypeInto.Target>
+                                <uix:TargetAnchorable BrowserURL="https://audit.freightoptics.com/ui3/ltlinvoiceScreen" DesignTimeRectangle="1397, 645, 315, 47" DesignTimeScaleFactor="1.25" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl aaname='Consignee Address' tag='TABLE' /&gt;&lt;webctrl tableCol='2' tableRow='4' tag='INPUT' type='search' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Consignee Address' tag='TABLE' /&gt;&lt;webctrl class='ui-select-search select2-input ng-pristine ng-valid ng-touched' aaname='' tag='INPUT' type='search' /&gt;" Guid="b36baf50-d992-44d2-852a-27a8312ea5e6" InformativeScreenshot="d522a5fba3d406d89d844c6cc3987ee5.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Freight Invoice Screen' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                                  <uix:TargetAnchorable.Anchors>
+                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                      <uix:Target DesignTimeRectangle="1323, 391, 183, 42" FriendlyName="'chrome.exe Freight'" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAALcAAAAqCAYAAADxlsoCAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAN4SURBVHhe7Z1NcoMwDEY5Y2Z6oQxXSY+SnCKrLnKGrKgBy5ZkGRzS0InyvRnNNGD8Iz8Ldu0GAJwCuYFbuuv1OiAQHgOVG7gFcgO3QG7gFsgN3AK5gVsgN3AL5AZugdzALZAbuAVyA7dAbuAWyA3c8gdyn4e+64aOx9dpuMW7e3H7PsxjH8/xyntyPs457C/xQgs/p+HQkvfWdk54Sm7aiFocvvdLoQ+5WaF4REDIbbJZ7iRTCF1lsvR92C7QCs9p1x2G00+8sQbkNtkod64wj7w+daWvHYr+Ij91RDvaIH3v0s/XROVWn0zhHo1Bb5WmMSdUXzX5aB4UzSLdhtPX3G9/nCWvvflkHkMBqUi73C6uJ/x9mtrx9dBccuh8yIPIi5jM055vb802uR+uAFoMFkxGuRk8KPFWP/FeIffCmCG03GWwzVYHigffdLnhPBreYDTGNH+au36ulE5E2o+Wdio/6dl63pKo+gCPMT1vj1sWin3YJrdZJeskgfhhSMJkicp2OVlzgtSmh3kUCY9zWh7TkLs6Zv4tq5Cai7GeicZc0TxIBDooQowkFR+DCUVraGqXJeZjpHyI+dKzsb8i1zSOajfmpNGRV7BD5VYLZtAGatGsZKdraeNC8MSJhNfHpP7ax6xXsjnUhtdiMVdxDN7GyLHOV0K1bWtH6+I5YgegEpQnyhG/NkFjjLG45tezwzf3H8sdycnNVXz6vbvcsd2a3AufJpQHO/IaXiM3n9e63LJPlhtVofOayj3Yi41yyw2pihcXnH7zk5xOeF78umjzuPS3uCfkZvMzx3xE7rzhvE1B6rsusc0DQqUDxIVhz9Nam9pZcue1FwdDMPZFz6l+wtj0bPWQ7cRmuUcoEbUYv7fmZS1UP3biV0WrVEdxL/W3MGaIdrkD7FAUwebPD7wO3r+A+mb9ZEoBF3PODvJ6O1vuPKYRsX+779BPJU9vKfeEuSCdsJGyQukNbxJNCV5cF5KojQr3dH9NY06Um25uWnEAl1/L9lgZ6748REwqJvfIcrua3CPG20QdPppX6jte1z78l9gjz8v9TqTE/993INgPt3LLyqJCVTjgE9+V2/pGN79tgUc+67MEfBSQG7gFcgO3QG7gFsgN3AK5gVsgN3AL5AZugdzALfifOAi3AbkRbqO73+/DJ8W4aOs6wl9AboTTuA+/shnQW2UtKp4AAAAASUVORK5CYII=" SearchSteps="Image" TargetType="ImageBased" />
+                                    </scg:List>
+                                  </uix:TargetAnchorable.Anchors>
+                                </uix:TargetAnchorable>
+                              </uix:NTypeInto.Target>
+                              <uix:NTypeInto.Text>
+                                <InArgument x:TypeArguments="x:String">
+                                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_119">CurrentRow["Consignee State"].ToString().Trim()</CSharpValue>
+                                </InArgument>
+                              </uix:NTypeInto.Text>
+                            </uix:NTypeInto>
+                            <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="387.2,178.4" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_3" Shortcuts="[d(hk)][k(enter)][u(hk)]" Version="V3" />
+                            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="387.2,52.8" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+                              <ui:CommentOut.Body>
+                                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,268" sap2010:WorkflowViewState.IdRef="Sequence_59">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <uix:NSelectItem DelayBefore="1" DisplayName="Select Item 'Select State*'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NSelectItem_13" Item="AL&#xA;                                        Alabama" ScopeIdentifier="55fe380f-4dcf-4e05-997d-6ee3c0ae967d" Version="V3">
+                                    <uix:NSelectItem.Items>
+                                      <scg:List x:TypeArguments="x:String" Capacity="50">
+                                        <x:String xml:space="preserve">AL
+                                        Alabama</x:String>
+                                        <x:String xml:space="preserve">AK
+                                        Alaska</x:String>
+                                        <x:String xml:space="preserve">AZ
+                                        Arizona</x:String>
+                                        <x:String xml:space="preserve">AR
+                                        Arkansas</x:String>
+                                        <x:String xml:space="preserve">CA
+                                        California</x:String>
+                                        <x:String xml:space="preserve">CO
+                                        Colorado</x:String>
+                                        <x:String xml:space="preserve">CT
+                                        Connecticu</x:String>
+                                        <x:String xml:space="preserve">DE
+                                        Delaware</x:String>
+                                        <x:String xml:space="preserve">FL
+                                        Florida</x:String>
+                                        <x:String xml:space="preserve">GA
+                                        Georgia</x:String>
+                                        <x:String xml:space="preserve">HI
+                                        Hawaii</x:String>
+                                        <x:String xml:space="preserve">ID
+                                        Idaho</x:String>
+                                        <x:String xml:space="preserve">IL
+                                        Illinois</x:String>
+                                        <x:String xml:space="preserve">IN
+                                        Indiana</x:String>
+                                        <x:String xml:space="preserve">IA
+                                        Iowa</x:String>
+                                        <x:String xml:space="preserve">KS
+                                        Kansas</x:String>
+                                        <x:String xml:space="preserve">KY
+                                        Kentucky</x:String>
+                                        <x:String xml:space="preserve">LA
+                                        Louisiana</x:String>
+                                        <x:String xml:space="preserve">ME
+                                        Maine</x:String>
+                                        <x:String xml:space="preserve">MD
+                                        Maryland</x:String>
+                                        <x:String xml:space="preserve">MA
+                                        Massachusetts</x:String>
+                                        <x:String xml:space="preserve">MI
+                                        Michigan</x:String>
+                                        <x:String xml:space="preserve">MN
+                                        Minnesota</x:String>
+                                        <x:String xml:space="preserve">MS
+                                        Mississippi</x:String>
+                                        <x:String xml:space="preserve">MO
+                                        Missouri</x:String>
+                                        <x:String xml:space="preserve">MT
+                                        Montana</x:String>
+                                        <x:String xml:space="preserve">NE
+                                        Nebraska</x:String>
+                                        <x:String xml:space="preserve">NV
+                                        Nevada</x:String>
+                                        <x:String xml:space="preserve">NH
+                                        New Hampshire</x:String>
+                                        <x:String xml:space="preserve">NJ
+                                        New Jersey</x:String>
+                                        <x:String xml:space="preserve">NM
+                                        New Mexico</x:String>
+                                        <x:String xml:space="preserve">NY
+                                        New York</x:String>
+                                        <x:String xml:space="preserve">NC
+                                        North Carolina</x:String>
+                                        <x:String xml:space="preserve">ND
+                                        North Dakota</x:String>
+                                        <x:String xml:space="preserve">OH
+                                        Ohio</x:String>
+                                        <x:String xml:space="preserve">OK
+                                        Oklahoma</x:String>
+                                        <x:String xml:space="preserve">OR
+                                        Oregon</x:String>
+                                        <x:String xml:space="preserve">PA
+                                        Pennsylvania</x:String>
+                                        <x:String xml:space="preserve">RI
+                                        Rhode Island</x:String>
+                                        <x:String xml:space="preserve">SC
+                                        South Carolina</x:String>
+                                        <x:String xml:space="preserve">SD
+                                        South Dakota</x:String>
+                                        <x:String xml:space="preserve">TN
+                                        Tennessee</x:String>
+                                        <x:String xml:space="preserve">TX
+                                        Texas</x:String>
+                                        <x:String xml:space="preserve">UT
+                                        Utah</x:String>
+                                        <x:String xml:space="preserve">VT
+                                        Vermont</x:String>
+                                        <x:String xml:space="preserve">VA
+                                        Virginia</x:String>
+                                        <x:String xml:space="preserve">WA
+                                        Washington</x:String>
+                                        <x:String xml:space="preserve">WV
+                                        West Virginia</x:String>
+                                        <x:String xml:space="preserve">WI
+                                        Wisconsin</x:String>
+                                        <x:String xml:space="preserve">WY
+                                        Wyoming</x:String>
+                                      </scg:List>
+                                    </uix:NSelectItem.Items>
+                                    <uix:NSelectItem.Target>
+                                      <uix:TargetAnchorable BrowserURL="https://audit.freightoptics.com/ui3/ltlinvoiceScreen" DesignTimeRectangle="945, 501, 253, 26" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Select State*'" FullSelectorArgument="&lt;webctrl aaname='Consignee Address' tag='TABLE' /&gt;&lt;webctrl aaname='Select State*                                                   *' tableRow='4' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Consignee Address' tag='TABLE' /&gt;&lt;webctrl aaname='Select State*                                                   *' type='' tag='A' class='select2-choice ui-select-match select2-default' check:innerText='Select State*' /&gt;" Guid="8169b6ae-2ff6-4e1b-8a9d-a7e3e2ba6cfc" InformativeScreenshot="661d82431aa93de78cf75f1f8438429d.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Freight Invoice Screen' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                                        <uix:TargetAnchorable.Anchors>
+                                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                            <uix:Target DesignTimeRectangle="709, 324, 494, 30" ElementType="Text" FriendlyName="'Consignee Address'" FullSelectorArgument="&lt;webctrl aaname='Consignee Address' tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='TH' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Consignee Address' tag='TABLE' /&gt;&lt;webctrl type='' tag='TH' class='' aaname='Consignee Address' check:innerText='Consignee Address' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAfIAAAAiCAYAAACk2FtLAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAQGSURBVHhe7ZnNSvNAGEZ7jYXeg1fhouRW2oUbF4LgQhCEFlQUL8CVC3eCS1fzNclM+s6T6d+XBDrmHDhom8nkR+NJ6sQJy+XSXV1duevra3dzc+Nub2/d3d2du7+/dw8PD+7x8dGtViu3Xq/d09OTe35+di8vL+719dW9vb1Vvr+/n2TJ9/d3ZRd+fn46O5lMIgEAAM4ZQi4ScgAAyAlCLvYZ8o+PD0RExEEl5GLfIQcAABgSQi4ScgAAyAlCLhJyAADICUIuEnIAAMgJQi4ScgAAyAlCLhJyAADICUIuEnIAAMgJQi4ScgAAyAlCLhJyAADICUIuEnKA/vhaTuWaKtzKL+ubsK1i7d84M1bz8vinbvHp39jJl1vMNmNni813CT4Xbro5zukyuRRGCCEX4z86hBzg//AxknDXMRsmQucd8pUr/N+Uw8dOyOE0CLkYAh7sAiGHsVJH9Zinz5GwLszflUOfShByOA1CLtqIl3aBkMM4ORCiiO2TauV8m7jw9G7dPm0n1vOxbMb44DVjKn1Eo7B6zbZb6+qx6Pp23Rbm0wndR0/8L4ipm0bnL6zvnW2Wb77WIbfnIdw4yfjohkrnqreh2+cGLC8Iubj9Za7tAiGHceLjsjduJToufh1CXkcvvjmol8mTrY1kCHGYuwmzhNwvjz5BaD3xxttu3TAcOt5oPj+XHevna7YX9i061m1c439P+G1r9JvX8bElPylpHS/kBiEXqwvI2AVCDuOkHZMUqajY9zTW9nU9zl+nIYo2sNX38dzRfBpj8zqaO9LuV0q5sfDoceprPc7NCHP+EjcJUXhleXPD0rYaH24SSpufj5+jMj5nkAeEXGx+yb1dIOQwVjRWKVJj7Hv7Ql5ho1SGzMa5+j6e+7SQ7973dnj3YSMZG56A+wh58zR9zNO1jX0Tc7/N6v39Pzc4Pwi5aC+00i4QchgvIQxx8OpohYBqpOLXGrh0QM06Ns4hVmHuJl5+/T0hb8ZGkTNx82Pj/db98uh2KmyoN/gxTXzD/H55fdzb7YdzmAx5mNuML29M2mGXffAccwMG5wchF6sLyNgFQg5jJ0Rn644QB5s4hnVTIQ+xCu6Is33yDEo8kyEv0XVnhSuWZs9DbIPzwi0ST8F6DA07th9pIts+j7tCXqLnZ+qK+aLah3geH2zZdjv6cO4MEvLLy0t3cXFxlOXYEkIOAMNhntwB/hiDhDwV7H2WEHIA6I0DT7gAfwlCLurF3wVCDgAAQ0PIRUIOAAA5QchFQg4AADlByEVCDgAAOUHIRUIOAAA5QchFQg4AADlByEVCDgAAOUHIRUIOAAA5QcjFvkOOiIg4pIRcJOSIiJiThFzsO+S/v7+IeEZyXeLf8tf9A0pVcOtfZYtnAAAAAElFTkSuQmCC" SearchSteps="Selector" />
+                                          </scg:List>
+                                        </uix:TargetAnchorable.Anchors>
+                                      </uix:TargetAnchorable>
+                                    </uix:NSelectItem.Target>
+                                  </uix:NSelectItem>
+                                </Sequence>
+                              </ui:CommentOut.Body>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </ui:CommentOut>
+                          </Sequence>
+                        </Sequence>
+                      </If.Then>
+                      <If.Else>
+                        <Sequence sap:VirtualizedContainerService.HintSize="300,80" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </Sequence>
+                      </If.Else>
+                    </If>
+                  </Sequence>
+                </ActivityAction>
+              </ui:ForEachRow.Body>
+              <ui:ForEachRow.DataTable>
+                <InArgument x:TypeArguments="sd:DataTable">
+                  <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_2">
+                    <CSharpValue.Result>
+                      <OutArgument x:TypeArguments="sd:DataTable" />
+                    </CSharpValue.Result>ReadExcel</CSharpValue>
+                </InArgument>
+              </ui:ForEachRow.DataTable>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:ForEachRow>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-8, -8, 1382, 744" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAbxSURBVFhHpZZtTFvnFcf9pWuypg3tmjVrGmLeEoMBG2PaJBDb2CkvyQJpvlXtFqRpmrSXT5s67a3pl0nTptXkhdAklEsCbZdG3VsrVe3AhhBCs3ZDi5ZAo21OA5hAOztNmrXhXj9n//M8j415SUe7I/30P+fh+vzPufcasC03YgF3zkzQ0zITrDLAyPshb3ImVEXTQS/NBDn3RmeClcZ0qHIvX6s/9v/HVIPbfjVU1com2kxcra2k6VovqBQM14sIVBpTAbddt/nsoTb2htlUGgWUWcYQ9dWAR0wFOPcgV8r1VMCj8AOfZ59uufzgyWES00a6sUfm8ww0cTZiuPZViLi/Qp1xrohNbV7m3ZiurXChUSzbIIO/QjDKUBlpE4r73BmdhE5ucys4V/X/HoI3h1EsvYFSjTaa9Kmm8W3aSDXPMJGmxkWTNS4BBaoer3ZhCMfSQ/Azh1FMGWU1z5ipxnIA1hq3kDUbaENlJHMxLmul49XljFDqii35LZnwucMZE4XI3khvo41Uzg1lzc1l7aIrOGO0KV3ZupAycWVLWVjbqnC/tNve/h3/nAmboqk2I7mNNpn57jfoxss9ZMYnKR3i5rskZl4la2QXWecqGcGaYn3LQ5JzHpx5BM5kTcNZ70PlS3uMbUYzjYUq1Fb6dknFxDKvr6YbJ3u0JVE8Kah/bBaYdGkqpU8xzNSLZL3jJ/OtChgxbgzhxjDQYbeqoajVXXAbu3M8LzxGzL4fBjO3io1Z39tSRuN1W+nWpTFp8JeYSd8yPqKqZ65R1T4N8qbwdYqOzsprxM0xst6ugZmLDZUOc85aDi3HEOVJGsG74H5hd4u7ZzdVANb+Jq80ZfCsBOv133TLxkein5AXhhmezso1R3ENh4h3K7PhMk1pljJOMXumpMXm7m42ALm6m4S7p1k8+Ys6ury5lN7b7BTMxGP1siFvV/l0UuLROse1eefv4C5xpC7sFdZZJ5lnS8hagtRwiWFzdTdHXScwwIkmTTO9useLIZwUe8RJN177nWy289kPqeJnyTlglNF0rutvdt6QnxFTJ4R5thhm2TgwlINS0NRQ8Yit/HhTsvz4LkpT1rWLth9spL/7yij2cIm4dWmUxuIWudF8MYnbkKTJJF7MTyZguBGGmiEJMSZInS1K2MqMr8JUImSu659/u5piVcWCN4lcnCXXTxNLA7P5dYLKoRH9QlpDRWSeKSSLQW4NaZV1gbCVdu6kUpiWGjuF1C6lj7Q30vkap2zSd/EWlaHpQtgoW7PP+zA0h3WmAEb5wjoDhgowTD7O5uABks7OHUKxk6BAqvjeUz5hxidoMpGi0p/8+zMxiscmProAkzwyB/Ogdgxhl7XKN3CdsJU8v+OvJR2NpNhBqGXuZH2+UQz2n5SbtHRcJycaO38MWD+Ful9dk59JTZ+CGRvlCnMwlyzJBrBecG4Oro/aHB0NRvGxRpqjQQ7gONYgOP/6a0/JZn/+1yyVwLwYKP1A5nP13HkvHhmH9fYWMk+vBw/B9CHBqnOyWE+vM2yOow0tIGPIyPpovQCsdPy8+ioe6rtJjh99QA6YSF0Izg/1/kdee228E4brYLYO2z6I/EGYK6y0Dqzba7MbgZziI/XJTUfqKRsH69E6wXi79ojR9/8hG//pwi0K/jJJm2CYzdeOfUjn/qlevInEu5QYLCFz4CuatTBdK9JqnX5A5hTNUX+WNz1X37rpuTraqJH5kTqRroHwGntE1/nfSgOOi5OWHIaZwEuaDr6m849bsN1aGD+QwWLt/7JUa2CNsPrXGNKcw9HeYN/Y/igxRVrTeRaisH27CPQ8Sa+MvkEX9R3hGL9+lYy/vUJP/P4H5O/wwWiNYkBr//0ytwbuFzIH2H7+f0ZFbaHWosPbKU1hG+ujxKaFhyWkNCT4ZxldwKk/FMHkS8pU6n3YVipZyFlTA/ct/k/ZHg7kFBwOxQraVOOCQyEqBKx8JpXP2ubX2Tze9TDM7hVm9F4YAlaAM605wormxLTl4sAQ9oK2YCzdMP9gkApA/qGgkHCu66XOL7+JZxxdjQHuAathuBqGUNSa2KJbvzB4iPwDtTHZ9EAt5R2sFQznafJY8XNWmR8I0ve7y8mM3I1N71EKrOgqmK4SnM9G7ob5ik83TwcPkbe/NgbIfiAg8vYHpMochvb9Kk9T076VLr+B5xxZxabQu+ZhRe6Kfbxc8+zAIM/YW2F+W/wYxi86Xs4ns28ljL4oMSMrBNdmBPStDGe+758n+G7khv3GhrCfNrT6Re6zPsF5btgn6+q2zTBZobmTzF4QuTNp9q5s/fj1z7H17QKD5Kz/9bYWDNCFAaLQJKCTp/A7PXJHItX7hZFU7wpjtu+OluVvbLP9F5lmWAkTeM7rAAAAAElFTkSuQmCC" InformativeScreenshot="20c141fffc448096d38ef984f21b2821.jpg" Title="Freight Invoice Screen">
+          <uix:TargetApp.Selector>
+            <InArgument x:TypeArguments="x:String">
+              <Literal x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="Literal`1_1">
+                <Literal.Result>
+                  <OutArgument x:TypeArguments="x:String" />
+                </Literal.Result>&lt;html app='chrome.exe' title='Freight Invoice Screen' /&gt;</Literal>
+            </InArgument>
+          </uix:TargetApp.Selector>
+          <uix:TargetApp.Url>
+            <InArgument x:TypeArguments="x:String">
+              <Literal x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="Literal`1_1">https://audit.freightoptics.com/ui3/ltlinvoiceScreen</Literal>
+            </InArgument>
+          </uix:TargetApp.Url>
+        </uix:TargetApp>
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>

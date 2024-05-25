@@ -1,0 +1,163 @@
+{
+  "Workflows": [
+    {
+      "Path": null,
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Main.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "UserName&Sequence_1",
+        "Password&Sequence_1",
+        "InvoiceEntryUrl&Sequence_1",
+        "EnvironmantPath&Sequence_1",
+        "dtOutput&Sequence_1",
+        "LoginUrl&Sequence_1",
+        "GetFileName&Sequence_1",
+        "IsMessage&Sequence_8"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Library/Framework/Invoice Entry/Invoice_Entry.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "ReadExcel&Sequence_1",
+        "Mode&Sequence_8",
+        "AddModeName&Sequence_6",
+        "GetRange&Sequence_6"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "item",
+        "dtOutput",
+        "ExcelPath",
+        "EnvironmantPath"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Library/Framework/Data Entry Queue/Invoice Queue Data Entry/LineItem_Queue_Data_Entry.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "ReadExcel&Sequence_1",
+        "GetText&Sequence_68"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "ExcelPath"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Library/Framework/Data Entry Queue/Complete_Invoice_Queue.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "ExtractDataTable&Sequence_2",
+        "ReadExcel&Sequence_1",
+        "DocumentNumber&Sequence_3",
+        "GetSuccessMessage&Sequence_3"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "GetFilename",
+        "ExcelPath",
+        "IsMessage"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Library/Framework/Invoice Entry/Invoice_Entry_EnterData.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "ReadExcel&Sequence_1",
+        "DocumentNumber&Sequence_5"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "ExcelPath"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Library/Framework/Data Entry Queue/Update_Invoice.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "GetWeight&Sequence_2"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Library/Framework/Data Entry Queue/Invoice Queue Data Entry/Customer_Queue_Data_Entry.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "ExcelPath&Sequence_1",
+        "PoNumber&Sequence_1",
+        "InvoiceDate&Sequence_16"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "ReadExcel"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Library/Framework/Data Entry Queue/Invoice_Queue_Data_Entry.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "PoNumber&Sequence_1",
+        "ReadExcel&Sequence_1",
+        "InvoiceDate&Sequence_16"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "ExcelPath"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Library/Framework/Invoice Entry/Invoice_Entry_Upload.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Library/Initialization.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "Password",
+        "UserName",
+        "InvoiceEntryUrl",
+        "EnvironmantPath",
+        "LoginUrl"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Library/Framework/Freight_Optics_Login.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "UserName",
+        "Password",
+        "InvoiceEntryUrl",
+        "LoginUrl"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    }
+  ]
+}

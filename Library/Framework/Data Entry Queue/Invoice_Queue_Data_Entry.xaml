@@ -1,0 +1,556 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Freight_Data_Entry_Queue" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="ExcelPath" Type="InOutArgument(x:String)" />
+  </x:Members>
+  <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
+  <sap:VirtualizedContainerService.HintSize>797.6,3823.2</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Text</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.UIAutomationNext.Triggers</x:String>
+      <x:String>UiPath.Platform.Triggers</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.Platform.Triggers.Scope</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Triggers</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
+      <x:String>UiPath.Vision.OCR</x:String>
+      <x:String>UiPath.OCR.Contracts</x:String>
+      <x:String>UiPath.OCR.Contracts.Activities</x:String>
+      <x:String>UiPath.Core.Activities.OCR.Engines</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>System.Globalization</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.CSharp</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.IntelligentOCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OmniPage.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.PDF.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Core</AssemblyReference>
+      <AssemblyReference>UiPath.Vision.OmniPage.Core</AssemblyReference>
+      <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+      <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
+      <AssemblyReference>Zero_Down.Core</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldCollapseAll">False</x:Boolean>
+      <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Sequence DisplayName="Freight_Data_Entry_Queue" sap:VirtualizedContainerService.HintSize="808,3758.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="PoNumber" />
+      <Variable x:TypeArguments="sd:DataTable" Name="ReadExcel" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:ReadRange AddHeaders="True" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="745.6,88" sap2010:WorkflowViewState.IdRef="ReadRange_1" Range="A1" SheetName="Sheet1">
+      <ui:ReadRange.DataTable>
+        <OutArgument x:TypeArguments="sd:DataTable">
+          <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">
+            <CSharpReference.Result>
+              <OutArgument x:TypeArguments="Location(sd:DataTable)" />
+            </CSharpReference.Result>ReadExcel</CSharpReference>
+        </OutArgument>
+      </ui:ReadRange.DataTable>
+      <ui:ReadRange.WorkbookPath>
+        <InArgument x:TypeArguments="x:String">
+          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_121">ExcelPath</CSharpValue>
+        </InArgument>
+      </ui:ReadRange.WorkbookPath>
+    </ui:ReadRange>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Freight Invoice Screen" sap:VirtualizedContainerService.HintSize="745.6,3518.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="55fe380f-4dcf-4e05-997d-6ee3c0ae967d" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="712,3301.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="649.6,3186.4" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+              <ui:ForEachRow.Body>
+                <ActivityAction x:TypeArguments="sd:DataRow">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="616,2998.4" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <If sap:VirtualizedContainerService.HintSize="572.8,2908.8" sap2010:WorkflowViewState.IdRef="If_3">
+                      <If.Condition>
+                        <InArgument x:TypeArguments="x:Boolean">
+                          <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_21">
+                            <CSharpValue.Result>
+                              <OutArgument x:TypeArguments="x:Boolean" />
+                            </CSharpValue.Result>!String.IsNullOrEmpty(CurrentRow["Freight Bill No"].ToString().Trim())</CSharpValue>
+                        </InArgument>
+                      </If.Condition>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <If.Then>
+                        <Sequence sap:VirtualizedContainerService.HintSize="539.2,2725.6" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                          <Sequence.Variables>
+                            <Variable x:TypeArguments="x:String" Name="InvoiceDate" />
+                          </Sequence.Variables>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <Sequence sap:VirtualizedContainerService.HintSize="496,2636" sap2010:WorkflowViewState.IdRef="Sequence_56">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DelayAfter="1" DelayBefore="2" DelayBetweenKeys="1" DisplayName="Type Into 'Invoice Number*'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="433.6,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="55fe380f-4dcf-4e05-997d-6ee3c0ae967d" Version="V3">
+                              <uix:NTypeInto.Target>
+                                <uix:TargetAnchorable BrowserURL="https://audit.freightoptics.com/ui3/ltlinvoiceScreen" DesignTimeRectangle="787, 488, 163, 31" DesignTimeScaleFactor="0.8999999761581421" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='3' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='INPUT' class='ng-pristine ng-invalid ng-invalid-required ng-touched' aaname='' /&gt;" Guid="46fef8df-5242-4c9d-880a-259e866f9015" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAKcAAAAjCAYAAADxNxoiAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACESURBVHhe7dKxCcAwEMDA7L/jz+JUNqRwHRV3oA30LIgyJ1lnzpmREm2fOeFv5iTLnGSZkyxzkmVOssxJljnJMidZ5iTLnGSZkyxzkmVOssxJljnJMidZ5iTLnGSZkyxzkmVOssxJljnJMidZ5iTLnGSZkyxzknWdUyq0nTmhxpxErfUClr1k85LqcEkAAAAASUVORK5CYII=" InformativeScreenshot="28afd755ac1a888a2584ff9ce1795f77.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Freight Invoice Screen' /&gt;" SearchSteps="FuzzySelector, Image" Version="V2" Visibility="Interactive">
+                                  <uix:TargetAnchorable.Anchors>
+                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                      <uix:Target DesignTimeRectangle="787, 473, 92, 11" ElementType="Text" FriendlyName="'Invoice Number*'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='3' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='LABEL' class='control-label' aaname=' Invoice                                 Number*:' check:innerText='Invoice Number*:' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGAAAAAPCAYAAAAbOsq3AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHKSURBVFhH7VRBjsMgDOSNSPlQla8kTyEP6SHP8BqwwXZIut1mlz0wEmrBYDwzDg4GumIY0BnDgM4oBuyrB+c8LE9auAvbjHkduEeghc+Q63Qwb7QAOyzTffkBAsx31Iu85w1zTQuEdT7V9fcNuBlsgENie175lwYEFD88MA/m8iv+33K1Fk0DCskyyJjUzcIk6u7cjSQEnfErXfhcwJc9CP4i7L4IE6tdXiFry2elAfSfzZF3m9z5fBA1My8yQI0ZVxmaZ7mLtPFcC871F9BulEsDjgRzcSxacjgVYIjLfQ0RtBlX5oo5IdeGhOg3qPpMHS0DSADuzlyL7Ho2gEWXOeVdIhbnltsB9mzGhQGVfBWaY1icJGe7HFHOiJjMY8GC2KG+EES5v4i2KGLqjgvza540Ezl0k0VYzrbGFDtpmFd42wAm5SdB4C4DTmISSjju6jjuMCCde22A5FnwZwbwXBUpCSDYpO88QXymIZDt/oimcHiODVBxKUoj/5UBh1jKb3imvY27mpB5Kn5kQPsyIQaOIp7tGhKi7MMnJHCeQyy+8BpaOATlr8RO6njbADEkd5Pf4UuwxJyfGjDQB8OAzhgGdMYwoCsAvgBdPpzsvoHOtgAAAABJRU5ErkJggg==" SearchSteps="Selector" />
+                                    </scg:List>
+                                  </uix:TargetAnchorable.Anchors>
+                                </uix:TargetAnchorable>
+                              </uix:NTypeInto.Target>
+                              <uix:NTypeInto.Text>
+                                <InArgument x:TypeArguments="x:String">
+                                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_118">
+                                    <CSharpValue.Result>
+                                      <OutArgument x:TypeArguments="x:String" />
+                                    </CSharpValue.Result>CurrentRow["Freight Bill No"].ToString().Trim() + "[k(Tab)]"+ CurrentRow["BOL Number"].ToString().Trim()+"[k(Tab)]"+CurrentRow["PO Number"].ToString().Trim()+"[k(Tab)]"</CSharpValue>
+                                </InArgument>
+                              </uix:NTypeInto.Text>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </uix:NTypeInto>
+                            <uix:NSelectItem DisplayName="Select Item 'Select Service'" sap:VirtualizedContainerService.HintSize="433.6,157.6" sap2010:WorkflowViewState.IdRef="NSelectItem_5" Item="Standard" ScopeIdentifier="55fe380f-4dcf-4e05-997d-6ee3c0ae967d" Version="V3">
+                              <uix:NSelectItem.Items>
+                                <scg:List x:TypeArguments="x:String" Capacity="2">
+                                  <x:String>DEF-RDWY</x:String>
+                                  <x:String>Standard</x:String>
+                                </scg:List>
+                              </uix:NSelectItem.Items>
+                              <uix:NSelectItem.Target>
+                                <uix:TargetAnchorable BrowserURL="https://audit.freightoptics.com/ui3/ltlinvoiceScreen" DesignTimeRectangle="787, 451, 163, 23" DesignTimeScaleFactor="0.8999999761581421" ElementType="Text" FriendlyName="'Select Service'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='4' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='A' class='select2-choice ui-select-match select2-default' aaname='Select Service                                                                                 ' check:innerText='Select Service' /&gt;" Guid="20614e36-a46c-4498-90c3-bdb738e18a83" ImageBase64="" InformativeScreenshot="684bf32ca14b777053734ee3781e6b82.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Freight Invoice Screen' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive">
+                                  <uix:TargetAnchorable.Anchors>
+                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                      <uix:Target DesignTimeRectangle="784, 448, 168, 27" ElementType="Button" FriendlyName="'Select Service'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='4' tag='DIV' /&gt;" FuzzyMatches="10000" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='DIV' class='ui-select-container select2 select2-container ng-valid ng-valid-required ng-touched ng-dirty select2-container-active' aaname='' check:innerText='Select Service' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAKcAAAAbCAYAAAAZHp/iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAL4SURBVHhe7ZtLi+pAEEbvz1fQnSjZucpC1IUPULwggiO+Nq5E1K2LmV/gqm5XP2Kl052riY/A1IGPMXanU6EOnUH0z/V6BQ6niGE5OYVNTM7z+Qzj8RharRaH85Z0u13odDrSO/SP+hjJiQODwQAulwswTFZQuO12+1AOhwOcTifpHxU0khPNZTGZvGSR0+R4PEoPE3LiogyTlzxy4g6K57OczEvII+dut2M5mdeRR04My8m8DJaTKSwsJ1NYPibnfhhAEKj09/pNL3voi3nh148+zsD3HMIghPm3PiY8Vst9mDWftd5v5DNy7vuicVoUfB3OIV27F8r5cC3Mu/ignGJncYhAd7Eg6Ast5btxOaVot3kxaa2xYIgrqPPVe5agKbVEYzpyF9SSh6E6Z4P1knNV/X3YfIXyb7RxWmvRmt33zLjknM1m8sN1mslkAuv1OjE3m5yilXNsrtUM2SS70fKYyKnlix6X9Fi/tiWmUiUf6+5alExkvjk+WNeIzbvV+UPl1GJGNZNz/PfMuOQcjUZQr9ehWq1GaTabz5QTIVIQAZUkNNhEu+mOeWKHjAlh45UTsWvRktjXEAn/Tm7CS/S51vXpa79wafesp/xiXHJuNhtot9tQqVSgVCrJv7ib2vMwOeRUKAniAibx7EgW2eVU3GpJEYruxhp1Xf2ol/9GPCan+54Zl5yYxWIBjUYDyuWydw4mk5yycaZZ8hFHmhjJhTuSkYk0UcsRNRTP10IkxuSxXs8jp68W+1GM8+j1qZymPrrjUTntteSxvqb/npk08Xq9HtRqNVitVs5xTDY5RYNVM1Voo1WzTEIxJlsY32G0IGZeKBodLWGNBUPReBz0yZlSi5HKJMRHt14/Lqeum+yOMTmRxFqiZl2L+56ZNDmXyyVMp1PnmEkmORnmHtLkvCcsJ/MyWE6msOSRk78yx7yUPHJ6v2yMn9rzzzSYvOSR0/szDf6BG/MMssj53x+4GUHRXLwAh/POoHdUTExMTg6nOLnCP2FyovD2ET11AAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image" />
+                                    </scg:List>
+                                  </uix:TargetAnchorable.Anchors>
+                                </uix:TargetAnchorable>
+                              </uix:NSelectItem.Target>
+                            </uix:NSelectItem>
+                            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DelayBetweenKeys="0.5" DisplayName="Type Into 'Package Description*'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="433.6,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_12" InteractionMode="DebuggerApi" ScopeIdentifier="55fe380f-4dcf-4e05-997d-6ee3c0ae967d" Version="V3">
+                              <uix:NTypeInto.Target>
+                                <uix:TargetAnchorable BrowserURL="https://audit.freightoptics.com/ui3/ltlinvoiceScreen" DesignTimeRectangle="904, 451, 163, 31" DesignTimeScaleFactor="0.8999999761581421" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableCol='2' tableRow='4' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' class='ng-pristine ng-invalid ng-invalid-required ng-touched' tag='INPUT' aaname='' /&gt;" Guid="42002a7a-d61e-42c0-9c4c-2e97cc25f0fa" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAKcAAAAjCAYAAADxNxoiAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACGSURBVHhe7dKxEYAwEMAw9t8xg3wVOhpCjQvpzhv4mpktFTOnsj1zrrWkRMc54W/mJMucZJmTLHOSZU6yzEmWOckyJ1nmJMucZJmTLHOSZU6yzEmWOckyJ1nmJMucZJmTLHOSZU6yzEmWOckyJ1nmJMucZJmTLHOS9TmnVOg1p1TLnIo2+wYsQC1D/CUEdAAAAABJRU5ErkJggg==" InformativeScreenshot="1d20c5de8d84c283bbdc9da4597d884f.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Freight Invoice Screen' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive">
+                                  <uix:TargetAnchorable.Anchors>
+                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                      <uix:Target DesignTimeRectangle="904, 436, 117, 11" ElementType="Text" FriendlyName="'Package Description*'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl aaname=' Package                                 Description*:' tableRow='4' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl aaname=' Package                                 Description*:' type='' tag='LABEL' class='control-label' check:innerText='Package Description*:' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHkAAAAPCAYAAADAgWCVAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJbSURBVFhH7VbbbcMwDMyIAjKQ4VHsBTqDPUg+vIW/VEp8ipKdpEiQNPHHodWD5PGOcnta1zUe+GwcJn8BDpO/AGryZYjhdIonxnmIi7l4L5YxQJ4Qh0v7/JmYOtNHQjc17z0OSxzOqdb1frMuWdvbYzYx97Gfp9hDvmnsN/NUJvdzWkOg/P43vNxkGVLs5flG3wY1uX1+DyYwmAc6jPD7vDTv3WQyGobJGDIA/gtAYhYmw8TheR+nFCNrRRiZIJliIaLw9Pv9EqXJgFwv6MC5+u1e9H75ZaB9yhkSH+hZazqOVQztwd2fgmcZt6sHDyzkK18y5XADvf25NonS2hue1xQjhMygiMlQvMjnYyg/romkNE4NWvGkgXZDCZXJlCfXIHNKw3Gd41w+NJiGk9cpt9OlNllr2Bz2JVcxwtnwFZPtAzH8C7Q12XjJCiXCe1hUjVQBLHgYMkzROgaJ5YYaHEQUOpOcgrr+FudUAwWvkc4sZ+Rgxdb8GU7syjArtLkr/diYRt+aj0zmfBs+7eHJJofYd/iTxahj7jP5luYqzia27seBXihy/hKTuWneR5NoTTEiQl6jgWxyaiwTZmN9DOXHNQkkJlCDVrzirD1gpZEurtFPZWLm2OAOSOt8/5rJzbMNkz3HQqN7TKY8dsAA100GsLEWco/i5KwDQeDMmizFWSwS2kKFpqYsuHnJw/shDg2+aIy9x/EEVz+AKGoOwQhV5oOvE/wni3+Tw47JFjokbZPTWRlX6fEQk98SSLp6aW8NEtoP1gvxZibvveL/gsPkAy/AYfLHY42/8g0gHBvS7J0AAAAASUVORK5CYII=" SearchSteps="Selector" />
+                                    </scg:List>
+                                  </uix:TargetAnchorable.Anchors>
+                                </uix:TargetAnchorable>
+                              </uix:NTypeInto.Target>
+                              <uix:NTypeInto.Text>
+                                <InArgument x:TypeArguments="x:String">
+                                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_34">
+                                    <CSharpValue.Result>
+                                      <OutArgument x:TypeArguments="x:String" />
+                                    </CSharpValue.Result>CurrentRow["Package Description"].ToString().Trim()+"[k(Tab)]"+CurrentRow["Amount Due"].ToString().Trim()+"[k(Tab)]"</CSharpValue>
+                                </InArgument>
+                              </uix:NTypeInto.Text>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </uix:NTypeInto>
+                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Choose Mode'" sap:VirtualizedContainerService.HintSize="433.6,157.6" sap2010:WorkflowViewState.IdRef="NClick_17" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="55fe380f-4dcf-4e05-997d-6ee3c0ae967d" Version="V3">
+                              <uix:NClick.Target>
+                                <uix:TargetAnchorable BrowserURL="https://audit.freightoptics.com/ui3/ltlinvoiceScreen" DesignTimeRectangle="787, 466, 163, 23" DesignTimeScaleFactor="0.8999999761581421" ElementType="Text" FriendlyName="'Choose Mode'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='5' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='A' class='select2-choice ui-select-match select2-default' aaname='Choose Mode                                                                                 ' check:innerText='Choose Mode' /&gt;" Guid="39cf0a6b-1efc-4351-bad4-69e090aafe1c" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAKcAAAAbCAYAAAAZHp/iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALwSURBVHhe7ZtNi+owFIbvzxdx5c6FLisK6kJ0IS4UOiDqQlcijoI7mfsjzu3JV5OYerXVscy8DxyG5qRJap4khdE/BEBJgZygtDhyns9nmkwm1O12EYhviX6/T71eT3jH/tkYOTkxGo3ocrmoEgAeh4Vbr9cPxX6/p9PpJPyzBTVysrkQExQlj5w6Pj8/hYcaIyc3CkBRisjJO6jtIeQET6WInNvtFnKC11FETg7ICV4G5ASlBXKC0vJeOXdDajQaaUQx/ZUJGibX0Ye8ejtfMUX+eEJld1Oy5yspb5NzN2IhI4q/VEGiZRxx2TCZupJNnl5EZvEko/2IZNlop0oeAXLeQ0jO5XJJi8XiKvx6HPnkVLvOMHNe1eRFSgBfAmfHZZktMnJGJg4jmV4QfrlLeq9eTNZ99j3qudy6Cv+USMLI6dwHaTUhOafTKXU6HeGGjsFgIKT16+aSU062J5WDlNNMvJhYNdlqkrXYTluZOdmeuxiUYEZ6/zpF7PL8QWhx9JEuFo/q2z/m7TEHc25bZmz+9S8mJOd8PqdWq0XVapUqlYr4y/9TX61WV3VfKqeZTGvCpCjXu9XtnL1DujLJMjv8caXS6vZ3evyWgNfPlD7DdU62mebs/lXkel34WYTk5ODds16vCzmbzeabjvWnySkvRT65FnX+OwaNNRa14xl5rDaKyWnngCZLTj7C2+021Wo1ms1mwToc+eRMkKK472WpXNly+ke3bEdN7q2cQsgg+lA7opGZ+wxI4kgsx5X2YY1T1dNjltLdf6w7Oeyagiw5OeI4pvF4HMzpyC0nIydQTrYIsaOxNjfkZOwdzBcqlFP363LTjhZU55J3yNj3QrSXLiJX+PTIFzj9uAvPHZcM//lMefI5+MP4jdyS854oJCcAt4CcoLQUkXOz2UBO8DqKyHk4HMJy4pvw4BkUkfN4PIa/CY/fEIFn8KicfJTzjsliZv6GiOEEm8sdIBDfGeydLSbjyAlAmYCcoKQQ/QPm8ddSx8Ea/wAAAABJRU5ErkJggg==" InformativeScreenshot="e699aae79569883d3ba38e3792b0b971.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Freight Invoice Screen' /&gt;" SearchSteps="FuzzySelector, Image" Version="V2" Visibility="Interactive">
+                                  <uix:TargetAnchorable.Anchors>
+                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                      <uix:Target DesignTimeRectangle="787, 451, 35, 11" ElementType="Text" FriendlyName="'Mode*'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='5' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='LABEL' class='control-label' aaname='Mode*' check:innerText='Mode*' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACcAAAAPCAYAAABnXNZuAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAERSURBVEhL7ZNBDoQgDEU5I4kXIlwFj4IHceExOqX8QjXODONsXPgTEouUvn7A0Y31wF3VDi4HR85FyoiLzuZGJblTog3xO+XA+y+R/Jwphb7ewG2UpgLiKC6YYqTIsXOe0oqpHzQGlxnM1OHvjFoGThfwCPCJu5GYRwdG0eNakdlDh4Hb5ZnT+O7cmshzkp98S6yd+zo/15RaQDeG2wKI7wYDUMRHF4/xmTqcuFRsrZARVks3DUDn+pbbjGbQnHVY/gnAiaMyPl+XBteK8FZ69zS5d/kfnM0bUYOzNteCx9gcdTtWODJ6rC2vrP3+yABn7w5L7592qkeOzWohjMsPwrPL+udc/c7dUA/cVd0YjugFv8PvXwubxlkAAAAASUVORK5CYII=" SearchSteps="Selector" />
+                                    </scg:List>
+                                  </uix:TargetAnchorable.Anchors>
+                                </uix:TargetAnchorable>
+                              </uix:NClick.Target>
+                            </uix:NClick>
+                            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Mode*'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="433.6,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_17" ScopeIdentifier="55fe380f-4dcf-4e05-997d-6ee3c0ae967d" Version="V3">
+                              <uix:NTypeInto.Target>
+                                <uix:TargetAnchorable BrowserURL="https://audit.freightoptics.com/ui3/ltlinvoiceScreen" DesignTimeRectangle="791, 489, 160, 34" DesignTimeScaleFactor="0.8999999761581421" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;input' tag='INPUT' type='search' /&gt;" FuzzySelectorArgument="&lt;webctrl class='ui-select-search select2-input ng-pristine ng-valid ng-touched' tag='INPUT' type='search' aaname='' /&gt;" Guid="45245d77-3e23-422f-a1ac-d7910c533c1c" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAKQAAAAmCAYAAABKzTCSAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIbSURBVHhe7ds5azJRFMZxv0++UD5RCpdGEVHQV7BwwR0tbN5OIgjWWojiAqK44Ib7CedkQmJiTJFL5hTPDw4D45R/7tw7oGM2mxEGY9c8/PtPHzkulwthMHbN03NTrm8c1pVSqRQGY+uwqyAB7ML98UqJIEEFBAmqcH/n8xlBgg7c3+l0QpBgFq9y+/2edrvd1en5J9zf8XhEkGDOYrGgarVK6XSakskkVSoV6vf71q/3IUgwaj6fU6FQIL/fT5lMhkqlEnm9XgoEAtTtdq2nvsf9HQ4HBAm/xyHVajWJsV6vy+uaV7vhcEg+n49CoZDcuwdBgjGr1Upe0fl8nrbbrXX3FQfq8Xh+fHUjSDBmuVxSPB6ncrksJ+WPms2mBNnr9aw7tyFIMIZXRT7ARKNRarfb8rrmEzYfcrgr3kvyHvMeBAnG8KeeTqdDkUiEYrGY7CcbjYYccpxOp+wtR6OR9fRt3F+r1UKQYAavbhxUNpulcDhMwWBQXuM8HCX3NRgMrKe/4t/X6zWCBHN4/8ivZj7A8KeeyWQiw98lXS4XJRIJ2UvyivoZgoQ/w3vJYrFIbrdbrnwI+gxBwp+aTqeyx8zlcrTZbKy77xAkqIIgQRUECaogSFAFQYIqCBJUQZCgCoIEVRAkqIIgQRUECaogSFAFQYIqCBJUQZCgCoIEVW4GicHYOVdBAtjhMXCk8Xgsf3NAkGC76yDX9AKbDh8U4Gv0FQAAAABJRU5ErkJggg==" InformativeScreenshot="d82374b0eb28676001e1d84c2096282d.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Freight Invoice Screen' /&gt;" SearchSteps="FuzzySelector, Image" Version="V2" Visibility="Interactive">
+                                  <uix:TargetAnchorable.Anchors>
+                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                      <uix:Target DesignTimeRectangle="787, 451, 35, 11" ElementType="Text" FriendlyName="'Mode*'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='5' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='LABEL' class='control-label' aaname='Mode*' check:innerText='Mode*' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACcAAAAPCAYAAABnXNZuAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAERSURBVEhL7ZNBDoQgDEU5I4kXIlwFj4IHceExOqX8QjXODONsXPgTEouUvn7A0Y31wF3VDi4HR85FyoiLzuZGJblTog3xO+XA+y+R/Jwphb7ewG2UpgLiKC6YYqTIsXOe0oqpHzQGlxnM1OHvjFoGThfwCPCJu5GYRwdG0eNakdlDh4Hb5ZnT+O7cmshzkp98S6yd+zo/15RaQDeG2wKI7wYDUMRHF4/xmTqcuFRsrZARVks3DUDn+pbbjGbQnHVY/gnAiaMyPl+XBteK8FZ69zS5d/kfnM0bUYOzNteCx9gcdTtWODJ6rC2vrP3+yABn7w5L7592qkeOzWohjMsPwrPL+udc/c7dUA/cVd0YjugFv8PvXwubxlkAAAAASUVORK5CYII=" SearchSteps="Selector" />
+                                    </scg:List>
+                                  </uix:TargetAnchorable.Anchors>
+                                </uix:TargetAnchorable>
+                              </uix:NTypeInto.Target>
+                              <uix:NTypeInto.Text>
+                                <InArgument x:TypeArguments="x:String">
+                                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_89">
+                                    <CSharpValue.Result>
+                                      <OutArgument x:TypeArguments="x:String" />
+                                    </CSharpValue.Result>CurrentRow["Mode"].ToString().Trim()</CSharpValue>
+                                </InArgument>
+                              </uix:NTypeInto.Text>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </uix:NTypeInto>
+                            <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="433.6,52.8" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_4" Shortcuts="[d(hk)][k(enter)][u(hk)]" Version="V3">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </uix:NKeyboardShortcuts>
+                            <uix:NSelectItem DisplayName="Select Item 'Payment Method*'" sap:VirtualizedContainerService.HintSize="433.6,157.6" sap2010:WorkflowViewState.IdRef="NSelectItem_2" ScopeIdentifier="55fe380f-4dcf-4e05-997d-6ee3c0ae967d" Version="V3">
+                              <uix:NSelectItem.Item>
+                                <InArgument x:TypeArguments="x:String">
+                                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_115">
+                                    <CSharpValue.Result>
+                                      <OutArgument x:TypeArguments="x:String" />
+                                    </CSharpValue.Result>CurrentRow["Payment Mode"].ToString()</CSharpValue>
+                                </InArgument>
+                              </uix:NSelectItem.Item>
+                              <uix:NSelectItem.Items>
+                                <scg:List x:TypeArguments="x:String" Capacity="4">
+                                  <x:String>Prepaid</x:String>
+                                  <x:String>Collect</x:String>
+                                  <x:String>Freight Collect</x:String>
+                                  <x:String>TP</x:String>
+                                </scg:List>
+                              </uix:NSelectItem.Items>
+                              <uix:NSelectItem.Target>
+                                <uix:TargetAnchorable BrowserURL="https://audit.freightoptics.com/ui3/ltlinvoiceScreen" DesignTimeRectangle="898, 466, 163, 23" DesignTimeScaleFactor="0.8999999761581421" ElementType="Text" FriendlyName="'Payment Method*'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='5' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='A' class='select2-choice ui-select-match select2-default' aaname='Payment Method*                                                                                 ' check:innerText='Payment Method*' /&gt;" Guid="2e714911-e4c0-45e0-911a-6f7582093c58" InformativeScreenshot="07cb20ceff6189b7ec067baf7c0720ab.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Freight Invoice Screen' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                                  <uix:TargetAnchorable.Anchors>
+                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                      <uix:Target DesignTimeRectangle="898, 451, 55, 11" ElementType="Text" FriendlyName="'Bill option*'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl aaname='Bill option*' tableRow='5' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl aaname='Bill option*' type='' tag='LABEL' class='control-label' check:innerText='Bill option*' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADsAAAAPCAYAAABazrcIAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAsSURBVEhL7c8BAQAwDIOw+/eIls4HJw7y9glgZY3KWpW1KmtV1qqsVVkrYAdT98D2vK3pvQAAAABJRU5ErkJggg==" SearchSteps="Selector" />
+                                    </scg:List>
+                                  </uix:TargetAnchorable.Anchors>
+                                </uix:TargetAnchorable>
+                              </uix:NSelectItem.Target>
+                            </uix:NSelectItem>
+                            <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_6">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:String">
+                                  <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_8">
+                                    <CSharpReference.Result>
+                                      <OutArgument x:TypeArguments="Location(x:String)" />
+                                    </CSharpReference.Result>InvoiceDate</CSharpReference>
+                                </OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:String">
+                                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_114">
+                                    <CSharpValue.Result>
+                                      <OutArgument x:TypeArguments="x:String" />
+                                    </CSharpValue.Result>DateTime.Parse(CurrentRow["Invoice Date"].ToString().Trim()).ToString("MM/dd/yyyy")</CSharpValue>
+                                </InArgument>
+                              </Assign.Value>
+                            </Assign>
+                            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DelayBetweenKeys="0.8" DisplayName="Type Into 'Total Pieces*'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="433.6,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_16" ScopeIdentifier="55fe380f-4dcf-4e05-997d-6ee3c0ae967d" Version="V3">
+                              <uix:NTypeInto.Target>
+                                <uix:TargetAnchorable BrowserURL="https://audit.freightoptics.com/ui3/ltlinvoiceScreen" DesignTimeRectangle="1071, 466, 163, 31" DesignTimeScaleFactor="0.8999999761581421" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='5' tag='INPUT' type='number' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl class='ng-pristine ng-untouched ng-invalid ng-invalid-required' tag='INPUT' type='number' aaname='' /&gt;" Guid="37c5f712-4b19-416e-95c1-ead25e27d8f2" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAKcAAAAjCAYAAADxNxoiAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACESURBVHhe7dKxCcAwEMDA7L/jz+JUNqRwHRV3oA30LIgyJ1lnzpmREm2fOeFv5iTLnGSZkyxzkmVOssxJljnJMidZ5iTLnGSZkyxzkmVOssxJljnJMidZ5iTLnGSZkyxzkmVOssxJljnJMidZ5iTLnGSZkyxzknWdUyq0nTmhxpxErfUClr1k85LqcEkAAAAASUVORK5CYII=" InformativeScreenshot="4dadf5cbf9f28ae1d8b6dccea7467b5a.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Freight Invoice Screen' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive">
+                                  <uix:TargetAnchorable.Anchors>
+                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                      <uix:Target DesignTimeRectangle="1071, 451, 69, 11" ElementType="Text" FriendlyName="'Total Pieces*'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl aaname='Total                                 Pieces*:' tableRow='5' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl aaname='Total                                 Pieces*:' type='' tag='LABEL' class='' check:innerText='Total Pieces*:' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEkAAAAPCAYAAACocuKtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAF3SURBVFhH7VVLrsMgDMwZkXqhKFehRyEHySLH4Bl/qCEQXDWLt2AkS3GN7fHEpEucGGKKZMAUyQAWKcRtWeKibNsp0kNY4dwa2OuB6rr3yf4HmF/32zfyh3Wfwhn96mN4O+gPXDt9i01C4i8PqWM8IhL3OoGkte+jOEIMu48OX9QGz+BzSGMgEij9SgXIZFgcin8jocpzZND0W5EOIpy3WDaLrdjuKqZ7YO0cSzwIBW/s3dgkrOuiPzgJcCMSD579cmA8y5tEpISMCGYQSQgLKS1STVb7LFApJsXKGbRPXAqhW/hKpPqtAnQcn1GkhhDYyL5JGaonxuG5tlSrmYugfte8NLTe9s92WfC/RWoKcRfr9xNgLpzp1W7Bft14ACGAZ3+9bjVR/WKqK5W+J7lOFUOfa125lFcn4faPAmtbrxtCr2g5rBapPkf2o0gJLIaYg375/CUGH2AejIQSSx9lyOLa8nvuUWMk0kQbUyQDpkgGTJGGiPEPgAf/DXeRyGkAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image" />
+                                    </scg:List>
+                                  </uix:TargetAnchorable.Anchors>
+                                </uix:TargetAnchorable>
+                              </uix:NTypeInto.Target>
+                              <uix:NTypeInto.Text>
+                                <InArgument x:TypeArguments="x:String">
+                                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_122">CurrentRow["Quantity"].ToString().Trim() + "[k(Tab)]" +DateTime.Parse(CurrentRow["Invoice Date"].ToString().Trim()).ToString("yyyy-MM-dd")+"[k(Tab)]"+ CurrentRow["Weight"].ToString().Trim()+"[k(Tab)]"+ "[k(Tab)]" + DateTime.Parse(CurrentRow["Pickup Date"].ToString().Trim()).ToString("yyyy-MM-dd")+"[k(Tab)]"+ DateTime.Parse(CurrentRow["Delivery Date"].ToString().Trim()).ToString("yyyy-MM-dd")+"[k(Tab)]"</CSharpValue>
+                                </InArgument>
+                              </uix:NTypeInto.Text>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </uix:NTypeInto>
+                            <uix:NSelectItem DisplayName="Select Item 'Currency Codes*'" sap:VirtualizedContainerService.HintSize="433.6,157.6" sap2010:WorkflowViewState.IdRef="NSelectItem_7" Item="USD" ScopeIdentifier="55fe380f-4dcf-4e05-997d-6ee3c0ae967d" Version="V3">
+                              <uix:NSelectItem.Items>
+                                <scg:List x:TypeArguments="x:String" Capacity="50">
+                                  <x:String>AED</x:String>
+                                  <x:String>AFN</x:String>
+                                  <x:String>ALL</x:String>
+                                  <x:String>AMD</x:String>
+                                  <x:String>ANG</x:String>
+                                  <x:String>AOA</x:String>
+                                  <x:String>ARS</x:String>
+                                  <x:String>AUD</x:String>
+                                  <x:String>AWG</x:String>
+                                  <x:String>AZN</x:String>
+                                  <x:String>BAM</x:String>
+                                  <x:String>BBD</x:String>
+                                  <x:String>BDT</x:String>
+                                  <x:String>BGN</x:String>
+                                  <x:String>BHD</x:String>
+                                  <x:String>BIF</x:String>
+                                  <x:String>BMD</x:String>
+                                  <x:String>BND</x:String>
+                                  <x:String>BOB</x:String>
+                                  <x:String>BRL</x:String>
+                                  <x:String>BSD</x:String>
+                                  <x:String>BTC</x:String>
+                                  <x:String>BTN</x:String>
+                                  <x:String>BWP</x:String>
+                                  <x:String>BYN</x:String>
+                                  <x:String>BZD</x:String>
+                                  <x:String>CAD</x:String>
+                                  <x:String>CDF</x:String>
+                                  <x:String>CHF</x:String>
+                                  <x:String>CLF</x:String>
+                                  <x:String>CLP</x:String>
+                                  <x:String>CNH</x:String>
+                                  <x:String>CNY</x:String>
+                                  <x:String>COP</x:String>
+                                  <x:String>CRC</x:String>
+                                  <x:String>CUC</x:String>
+                                  <x:String>CUP</x:String>
+                                  <x:String>CVE</x:String>
+                                  <x:String>CZK</x:String>
+                                  <x:String>DJF</x:String>
+                                  <x:String>DKK</x:String>
+                                  <x:String>DOP</x:String>
+                                  <x:String>DZD</x:String>
+                                  <x:String>EGP</x:String>
+                                  <x:String>ERN</x:String>
+                                  <x:String>ETB</x:String>
+                                  <x:String>EUR</x:String>
+                                  <x:String>FJD</x:String>
+                                  <x:String>FKP</x:String>
+                                  <x:String>GBP</x:String>
+                                </scg:List>
+                              </uix:NSelectItem.Items>
+                              <uix:NSelectItem.Target>
+                                <uix:TargetAnchorable BrowserURL="https://audit.freightoptics.com/ui3/ltlinvoiceScreen" DesignTimeRectangle="1071, 490, 163, 23" DesignTimeScaleFactor="0.8999999761581421" ElementType="Text" FriendlyName="'Currency Codes*'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='9' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='A' class='select2-choice ui-select-match select2-default' aaname='Currency Codes*                                                                                 ' check:innerText='Currency Codes*' /&gt;" Guid="64a3a294-7afd-41ee-911f-e976892d8cb6" InformativeScreenshot="5923355d25d149015c52db6b9e4804c4.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Freight Invoice Screen' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                                  <uix:TargetAnchorable.Anchors>
+                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                      <uix:Target DesignTimeRectangle="1071, 474, 53, 11" ElementType="Text" FriendlyName="'Currency*'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl class='control-label' tableRow='9' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl class='control-label' type='' tag='LABEL' aaname='Currency*' check:innerText='Currency*' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADkAAAAPCAYAAABeO2c1AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFOSURBVEhL7ZTbDcMgDEWZEakLRaxCFugOROoa/cgYrg02MYSSx1fT9kooITbGx4YY+AH9Ib9FTch5tGCMWcYQ2PLhenpwYwB/cxAmB25KnyvIGR0IDJ34C+CbI9CbR+tna54CBGkQNibgnFRCIr0xFvyT5ysxsHRW/B8eLD4tFQiLcR/oiXP0lWoG+kZr45AiSlHV0MXEzlCMbIv78hp1ulJsjLmnk9G527EepAE7ppV50zhbx13mAsmFZaiYHL9LTG1L14nj134NHYSsqlhBFl3Lcbgwq0FgHK/ypYQLkJX2+iUdPK7nIduVPgspe6Qr0esiacePpwTTADkRfcwqnzzPMSmeFPI9ZPu4qrzYvtVFUgWZlJJSgwDxaOlExKbvzztIUhnToi9ZO5CkDMJjQCDeI+chp6qjJuQltHm1Fl0UsrxCW7puJw/oByABXmmSz/j2BTBTAAAAAElFTkSuQmCC" SearchSteps="Selector" />
+                                    </scg:List>
+                                  </uix:TargetAnchorable.Anchors>
+                                </uix:TargetAnchorable>
+                              </uix:NSelectItem.Target>
+                            </uix:NSelectItem>
+                            <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="433.6,178.4" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" Shortcuts="[d(hk)][k(tab)][u(hk)]" Version="V3" />
+                            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Library\\Framework\\Data Entry Queue\\Freight Queue Data Entry\\Customer_Queue_Data_Entry.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Library\\Framework\\Data Entry Queue\\Invoice Queue Data Entry\\Customer_Queue_Data_Entry.xaml">
+                              <ui:InvokeWorkflowFile.Arguments>
+                                <InArgument x:TypeArguments="sd:DataTable" x:Key="ReadExcel">
+                                  <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_113">
+                                    <CSharpValue.Result>
+                                      <OutArgument x:TypeArguments="sd:DataTable" />
+                                    </CSharpValue.Result>ReadExcel</CSharpValue>
+                                </InArgument>
+                              </ui:InvokeWorkflowFile.Arguments>
+                            </ui:InvokeWorkflowFile>
+                            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Library\\Framework\\Data Entry Queue\\Invoice Queue Data Entry\\LineItem_Queue_Data_Entry.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Library\\Framework\\Data Entry Queue\\Invoice Queue Data Entry\\LineItem_Queue_Data_Entry.xaml">
+                              <ui:InvokeWorkflowFile.Arguments>
+                                <InArgument x:TypeArguments="x:String" x:Key="ExcelPath">
+                                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_119">ExcelPath</CSharpValue>
+                                </InArgument>
+                              </ui:InvokeWorkflowFile.Arguments>
+                            </ui:InvokeWorkflowFile>
+                          </Sequence>
+                        </Sequence>
+                      </If.Then>
+                      <If.Else>
+                        <Sequence sap:VirtualizedContainerService.HintSize="300,80" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </Sequence>
+                      </If.Else>
+                    </If>
+                  </Sequence>
+                </ActivityAction>
+              </ui:ForEachRow.Body>
+              <ui:ForEachRow.DataTable>
+                <InArgument x:TypeArguments="sd:DataTable">
+                  <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_2">
+                    <CSharpValue.Result>
+                      <OutArgument x:TypeArguments="sd:DataTable" />
+                    </CSharpValue.Result>ReadExcel</CSharpValue>
+                </InArgument>
+              </ui:ForEachRow.DataTable>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:ForEachRow>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-8, -8, 1382, 744" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="20c141fffc448096d38ef984f21b2821.jpg" Title="Freight Invoice Screen">
+          <uix:TargetApp.Selector>
+            <InArgument x:TypeArguments="x:String">
+              <Literal x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="Literal`1_1">
+                <Literal.Result>
+                  <OutArgument x:TypeArguments="x:String" />
+                </Literal.Result>&lt;html app='chrome.exe' title='Freight Invoice Screen' /&gt;</Literal>
+            </InArgument>
+          </uix:TargetApp.Selector>
+          <uix:TargetApp.Url>
+            <InArgument x:TypeArguments="x:String">
+              <Literal x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="Literal`1_1">
+                <Literal.Result>
+                  <OutArgument x:TypeArguments="x:String" />
+                </Literal.Result>https://audit.freightoptics.com/ui3/ltlinvoiceScreen</Literal>
+            </InArgument>
+          </uix:TargetApp.Url>
+        </uix:TargetApp>
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
